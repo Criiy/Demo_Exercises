@@ -1,0 +1,79 @@
+body,html{
+    height: 100%;
+}
+body{
+    margin: 0;
+    padding:0;
+    list-style: none;
+    font:12px Arial;
+    background: #fff;
+}
+a{
+    color:black;
+    font-family: "微软雅黑";
+}
+#wrapper{
+    position: absolute;
+    min-width: 810px;
+    min-height: 600px;
+    height:100%;
+    width: 100%;
+    display: inline-block;
+}
+#head_wrapper{
+    position: relative;
+    width: 100%;
+    height:35% ;
+}
+#bottom_wrapper{
+    position: absolute;
+    width:100%;
+    height:20%;
+    text-align: center;
+    bottom: 100px;
+}
+#menus{
+    position: absolute;
+    right:0px;
+    top:0px;
+    padding: 25px 15px 0 0 ;
+    color:#333;
+    font-weight: 700;
+    font-size: 13px;
+}
+#logo_img{
+
+    text-align: center;
+    padding-top: 100px ;
+    margin: 0 auto;
+}
+#input{
+    padding:0px;
+    margin: 0px;
+    width: 620px;
+    margin: 0 auto;
+}
+#enterwords{
+    border: 1px solid #b8b8b8;
+    border-right: none;
+    padding-left: 10px;
+    font-size: 17px;
+    display: inline-block;
+    float: left;
+}
+#bd_yixia{
+    color: white;
+    font-size: 15px;
+    border:#317ef3 ;
+    background: #317ef3;
+    border-bottom: 1px solid #2d78f4;
+}
+#bottom_info{
+    color: darkgray;
+}
+#info_1>a{
+    color: darkgray;
+}
+#info_2>a{
+    color: darkgray;
+}
