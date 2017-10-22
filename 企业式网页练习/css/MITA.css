@@ -1,0 +1,241 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Century Gothic";
+    font-size: 14px;
+}
+body{
+    background-color: #262626;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+a:hover{
+    color: springgreen;
+}
+.top{
+    width: 100%;
+    height: 45px;
+    background-color: black;
+    border-bottom: 1px solid #3a3939;
+}
+.top_content{
+    width: 1200px;
+    margin: 0 auto;
+}
+.top_content li{
+    float: right;
+    width: 67px; /*防止太挤*/
+    line-height: 45px; /*垂直居中，与所在盒子的高度相等*/
+}
+.introduction{
+    float: left;
+    width: 150px;
+    line-height: 45px;
+}
+.introduction a{
+    color: springgreen;
+}
+.wrap{
+    width: 1200px;
+    height: 1283px;
+    margin: 0 auto;
+}
+.title{
+    width: 730px;
+    margin: 30px auto;
+}
+.title p{
+    color: white;
+    font-size: 60px;
+    font-family: "Felix Titling";
+}
+.nav{
+    width: 1100px;
+    height: 50px;
+    margin: 40px auto 0 auto;
+}
+.nav_left li{
+    float: left;
+    width: 120px;
+    margin: 0 15px;
+    text-align: center;
+}
+.nav_left li a{
+    font-size: 18px;
+    color: springgreen;
+    font-family: "Microsoft YaHei UI";
+}
+.nav_left li a:hover{
+    color: white;
+}
+.nav_right{
+    float: right;
+    width: 220px;
+}
+.search_text{
+    width: 190px;
+    height: 23px;
+    margin-top: -10px;
+    border-radius: 3px;
+    background:  url("../images/search.jpg") no-repeat right center;
+    background-color: white;
+    padding-right: 25px;
+    padding-left: 5px;
+}
+.ad{
+    height: 360px;
+    overflow: hidden;
+}
+.main{
+    width: 1200px;
+    margin: 20px auto;
+}
+.news{
+    width: 700px;
+    height: 370px;
+    background-color: #343434;
+}
+.live{
+    width: 700px;
+    height: 340px;
+    margin-top: 20px;
+    background-color: #343434;
+}
+.board{
+    float: right;
+    width: 480px;
+    height: 730px;
+    background-color: #343434;
+}
+.main_left{
+    float: left;
+}
+.topic_left{
+    float: left;
+    width: 190px;
+    color: white;
+    padding: 10px 0 0 20px;
+}
+.topic_right{
+    float: right;
+    padding: 10px 20px 0 0 ;
+}
+.topic_left p{
+    font-size: 19px;
+    font-family: "Felix Titling";
+}
+.leader{
+    padding: 20px 0 0 20px;
+}
+.leader p{
+    font-size: 27px;
+    color: springgreen;
+    font-family: "Felix Titling";
+}
+.news_list{
+    padding-top: 60px;
+    padding-left: 20px;
+}
+.news_list ul li {
+    margin-bottom: 19px;
+}
+.news_list ul li a{
+    font-size: 18px;
+    color: #38C1DE;
+}
+.news_list ul li span{
+    float: right;
+    color: #E8E8E8;
+    margin-right: 15px;
+}
+.video{
+    width: 700px;
+    padding-top: 60px;
+}
+.video_content{
+    width: 420px;
+    margin: 0 auto;
+}
+.video_intro{
+    width: 500px;
+    margin: 10px auto;
+}
+.video_intro p{
+    color: #38C1DE;
+    font-size: 19px;
+}
+.board_content{
+    width: 450px;
+    height: 80px;
+    margin: 15px auto;
+}
+.num{
+    color: white;
+    width: 40px;
+    float: left;
+    margin: 0 20px;
+}
+.num p{
+    font-size: 45px;
+    line-height: 80px;
+}
+.img{
+    float: left;
+    width: 70px;
+    height: 70px;
+    margin: 5px 20px 0 10px;
+}
+.info{
+    float: left;
+    width: 230px;
+    margin-top: 9px;
+}
+.name{
+    color: white;
+    font-size: 25px;
+    width: 230px;
+}
+.long{
+    font-size: 19px;
+}
+.change{
+    font-size: 23px;
+    color: #38C1DE;
+}
+.footer{
+    width: 100%;
+    height: 250px;
+    background-color: black;
+}
+.foot_content{
+    width: 1200px;
+    margin: 0 auto;
+}
+.foot_left{
+    float: left;
+    margin-top: 80px;
+}
+.foot_left p{
+    color: springgreen;
+    font-size: 35px;
+    font-family: "Felix Titling";
+}
+.foot_right{
+    float: right;
+    margin-top: 50px;
+}
+.tip{
+    color: white;
+    font-size: 18px;
+    margin-bottom: 9px;
+    margin-left: -5px;
+}
+.foot_right li{
+    color: white;
+    margin-bottom: 8px;
+}
