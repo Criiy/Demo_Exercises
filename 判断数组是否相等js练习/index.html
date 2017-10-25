@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Untitled Document</title>
+
+</head>
+<body>
+<script type="text/javascript">
+    function type(a){
+        return  a === null ? '[object Null]':Object.prototype.toString.apply(a); //hack ie678
+        //为了每个对象都能通过 Object.prototype.toString() 来检测，
+        // 需要以 Function.prototype.call() 或者 Function.prototype.apply() 的形式来调用，传递要检查的对象作为第一个参数，称为thisArg
+
+       /* var toString = Object.prototype.toString;
+
+        toString.call(new Date); // [object Date]
+        toString.call(new String); // [object String]
+        toString.call(Math); // [object Math]
+
+        //Since JavaScript 1.8.5
+        toString.call(undefined); // [object Undefined]
+        toString.call(null); // [object Null]*/
+
+
+    }
+    function arraysSimilar(arr1, arr2){
+        if(!Array.isArray(arr1) || !Array.isArray(arr2) ||arr1.length!=arr2.length){return false;}
+        var arr3=[];
+        var arr4=[];
+        var x;
+        for(var i in arr1){
+            arr3.push(type(arr1[i]));  //push(),把指定的值添加到数组后的新长度。
+            arr4.push(type(arr2[i]));
+        }
+        if(arr3.sort().toString()==arr4.sort().toString()){//使用排序判断
+            return true;
+        }else{
+            return false;
+        }
+    }
+</script>
+<script src="data.js"></script>
+</body>
+</html>
