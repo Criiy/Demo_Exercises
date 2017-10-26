@@ -1,0 +1,59 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    background: #333333;
+}
+.nav{
+    width:1000px;
+    height: 80px;
+    font:bold 0/10px Arial;
+    text-align:center;
+    margin:70px auto;
+    background: black;
+    /*制作圆*/
+    border-radius:8px;
+    /*制作导航立体风格*/
+    box-shadow:0 4px 10px springgreen;
+}
+.nav a{
+    display: inline-block;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    -ms-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+}
+.nav a:hover{
+    -webkit-transform:rotate(10deg);
+    -moz-transform:rotate(10deg);
+    -o-transform:rotate(10deg);
+    -ms-transform:rotate(10deg);
+    transform:rotate(10deg);
+}
+.nav li{
+    position:relative;
+    display:inline-block;
+    padding:0 26px;
+    font-size: 23px;
+    line-height: 80px;
+    text-shadow:1px 2px 4px rgba(0,0,0,.5);
+    list-style: none outside none;
+}
+.nav li{
+    background:linear-gradient(to bottom,#666666,#b8b8b8,#666666) no-repeat right / 2px 19px;
+}
+.nav li:last-child{
+    background:none;
+}
+.nav a{
+    color:#fff;
+    text-decoration: none;
+    text-shadow:0 4px 11px red;
+}
+.nav a:hover{
+    color: hotpink;
+    text-decoration: none;
+    text-shadow:0 4px 5px pink;
+}
