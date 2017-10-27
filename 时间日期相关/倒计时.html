@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script type="text/javascript">
+    window.onload = function () {
+        leftTime();
+    }
+    function leftTime() {
+        var endtime=new Date("2069/10/1,12:30:00");//结束时间
+        var nowtime = new Date();//当前时间
+        var lefttime= parseInt((endtime.getTime() - nowtime.getTime()) / 1000);//gettime获取毫秒
+        var d=  parseInt(lefttime/(24*60*60));
+        var h=  parseInt(lefttime/(60*60)%24);
+        var m=  parseInt(lefttime/60%60);
+        var s=  parseInt(lefttime%60);
+        s=s<10?"0"+s:s;
+        m=m<10?"0"+m:m;
+        h=h<10?"0"+h:h;
+        d=d<10?"0"+d:d;
+        document.getElementById("getTime").innerHTML=d+"天"+h+"小时"+m+"分"+s+"秒";
+        if(lefttime<=0) {
+            document.getElementById("getTime").innerHTML = "已结束";
+            clearInterval(sh);
+        }
+        setTimeout(leftTime,500)
+    }
+</script>
+<body>
+<div>还剩<span id="getTime"></span> </div>
+</body>
+</html>
