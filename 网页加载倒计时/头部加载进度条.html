@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>头部进度条</title>
+    <script src="../jquery-3.2.1.js"></script>
+    <style type="text/css">
+        .loading_bar{
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            background: white;
+        }
+        .bar{
+            width: 10%;
+            height: 4px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: springgreen;
+        }
+    </style>
+</head>
+<img src="http://img.bbs.kongzhong.com/gw2/attachment/forum/201301/28/100131s84ivhj08p0i0v33.jpg">
+<img src="http://img.bbs.kongzhong.com/gw2/attachment/forum/201301/28/100131s84ivhj08p0i0v33.jpg">
+<img src="http://img.bbs.kongzhong.com/gw2/attachment/forum/201301/28/100131s84ivhj08p0i0v33.jpg">
+
+<script type="text/javascript">
+    $(".loading_bar .bar").animate({width:"30%"},50)
+</script>
+
+<body>
+<div class="loading_bar">
+        <div class="bar"></div>
+</div>
+<div class="one">
+    <img src="http://img.bbs.kongzhong.com/gw2/attachment/forum/201301/28/100131s84ivhj08p0i0v33.jpg">
+    <img src="http://img.bbs.kongzhong.com/gw2/attachment/forum/201301/28/100131s84ivhj08p0i0v33.jpg">
+    <img src="http://img.bbs.kongzhong.com/gw2/attachment/forum/201301/28/100131s84ivhj08p0i0v33.jpg">
+</div>
+
+<script type="text/javascript">
+    $(".loading_bar .bar").animate({width:"50%"},50)
+</script>
+
+<div class="two">
+    <img src="http://img.bbs.kongzhong.com/gw2/attachment/forum/201301/28/100131s84ivhj08p0i0v33.jpg">
+    <img src="http://img.bbs.kongzhong.com/gw2/attachment/forum/201301/28/100131s84ivhj08p0i0v33.jpg">
+    <img src="http://img.bbs.kongzhong.com/gw2/attachment/forum/201301/28/100131s84ivhj08p0i0v33.jpg">
+    <img src="http://img.bbs.kongzhong.com/gw2/attachment/forum/201301/28/100131s84ivhj08p0i0v33.jpg">
+</div>
+
+<script type="text/javascript">
+    $(".loading_bar .bar").animate({width:"65%"},50)
+</script>
+
+<div class="three">
+    <img src="http://img.bbs.kongzhong.com/gw2/attachment/forum/201301/28/100131s84ivhj08p0i0v33.jpg">
+    <img src="http://img.bbs.kongzhong.com/gw2/attachment/forum/201301/28/100131s84ivhj08p0i0v33.jpg">
+    <img src="http://img.bbs.kongzhong.com/gw2/attachment/forum/201301/28/100131s84ivhj08p0i0v33.jpg">
+</div>
+
+<script type="text/javascript">
+    $(".loading_bar .bar").animate({width:"85%"},50)
+</script>
+
+<div class="four">
+    <img src="http://img.bbs.kongzhong.com/gw2/attachment/forum/201301/28/100131s84ivhj08p0i0v33.jpg">
+
+    <script type="text/javascript">
+        $(".loading_bar .bar").animate({width:"100%"},50)
+    </script>
+
+    <img src="http://img.bbs.kongzhong.com/gw2/attachment/forum/201301/28/100131s84ivhj08p0i0v33.jpg">
+</div>
+
+<script type="text/javascript">
+    $(".loading_bar").fadeOut();
+</script>
+
+</body>
+</html>
