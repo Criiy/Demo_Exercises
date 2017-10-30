@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>百分比旋转进度条</title>
+    <style type="text/css">
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .loading{
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            background: white;
+        }
+        .loading_img{
+            width: 120px;
+            height: 120px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            text-align: center;
+            font-size: 40px;
+            line-height: 120px;
+        }
+        .loading_img span{
+            display: block;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            border-radius: 50%;
+            box-shadow: 0 4px deeppink;
+            animation: rotate 1s infinite linear;
+        }
+        @keyframes rotate {
+            0%{transform: rotate(0deg);}
+            100%{transform: rotate(360deg);}
+        }
+
+
+    </style>
+
+
+    <script src="../jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $(function(){
+
+            var img=$('img');
+
+            var num=0;
+
+            img.each(function(i){
+
+                var oImg=new Image();
+
+                oImg.onload=function(){
+
+                    oImg.onload=null;  //清除缓存
+
+                    num++;
+
+                    $('.loading b').html(parseInt(num/$('img').length*100)+'%');
+
+                    if (img.length==i+1)
+
+                    {
+                        $('.loading').fadeOut();
+                    }
+                }
+
+                oImg.src=img[i].src;
+            })
+        })
+    </script>
+</head>
+<body>
+<div class="loading">
+    <div class="loading_img">
+        <span></span>
+        <b>0%</b>
+    </div>
+</div>
+<img src="http://img.bbs.kongzhong.com/gw2/attachment/forum/201301/28/100131s84ivhj08p0i0v33.jpg">
+<img src="http://img.bbs.kongzhong.com/gw2/attachment/forum/201301/28/100131s84ivhj08p0i0v33.jpg">
+<img src="http://img.bbs.kongzhong.com/gw2/attachment/forum/201301/28/100131s84ivhj08p0i0v33.jpg">
+<img src="http://img.bbs.kongzhong.com/gw2/attachment/forum/201301/28/100131s84ivhj08p0i0v33.jpg">
+<img src="http://img.bbs.kongzhong.com/gw2/attachment/forum/201301/28/100131s84ivhj08p0i0v33.jpg">
+<img src="http://img.bbs.kongzhong.com/gw2/attachment/forum/201301/28/100131s84ivhj08p0i0v33.jpg">
+<img src="http://img.bbs.kongzhong.com/gw2/attachment/forum/201301/28/100131s84ivhj08p0i0v33.jpg">
+<img src="http://img.bbs.kongzhong.com/gw2/attachment/forum/201301/28/100131s84ivhj08p0i0v33.jpg">
+<img src="http://img.bbs.kongzhong.com/gw2/attachment/forum/201301/28/100131s84ivhj08p0i0v33.jpg">
+</body>
+</html>
