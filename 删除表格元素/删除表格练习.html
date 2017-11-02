@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>制作一个表格，显示班级的学生信息。</title>
+    <script type="text/javascript">
+        // 以下函数不能解决动态问题！！！！！！！！！！！！！！！！！！
+        window.onload = function() {// 鼠标移动改变背景,可以通过给每行绑定鼠标移上事件和鼠标移除事件来改变所在行背景色。
+        var tr = document.getElementsByTagName("tr");
+        //获得tr是一个数组，tr[0]为第一个单元格（td）
+        for (var i = 0; i < tr.length; i++) {
+            bgcChange(tr[i]);
+        }
+    }
+    function bgcChange(obj)
+    {
+        obj.onmouseover=function(){
+            obj.style.backgroundColor="pink";
+        }
+        obj.onmouseout=function(){
+            obj.style.backgroundColor="#fff";
+        }
+    }
+        //删除表格函数
+        function del(obj) {//obj是外面传入的参数this，也就是删除字段的节点TD
+            var a = obj.parentNode.parentNode.parentNode;
+            //获取最外层节点table
+            var b = obj.parentNode.parentNode;
+            //获取第二层节点TR，TR里有3个TD，为一行
+            a.removeChild(b);
+            //利用父节点table删除子节点TR
+        }
+        //添加表格行函数
+        function add() {
+            var num=document.getElementById("get_num").value;
+            //获取输入的数字
+            var name=document.getElementById("get_name").value;
+            //获取输入的姓名
+            var new_tr=document.createElement("tr");
+            //新建tr标签
+            var new_td_num=document.createElement("td");
+            //新建td标签，用于数字
+            new_td_num.innerHTML=num;
+            //赋值给新的td标签
+            var new_td_name=document.createElement("td");
+            //新建td标签，用于姓名
+            new_td_name.innerHTML=name;
+            //赋值给新的td标签
+            var new_td_operation=document.createElement("td");
+            //新建td标签，用于操作
+            new_td_operation.innerHTML="<a href=\"javascript:;\" onclick=\"del(this)\" >删除</a>";
+            //赋值
+            var table=document.getElementById("table");
+            table.lastChild.appendChild(new_tr);
+            //上面两行是添加新的一行操作
+            new_tr.appendChild(new_td_num);
+            new_tr.appendChild(new_td_name);
+            new_tr.appendChild(new_td_operation);
+        }
+    </script>
+</head>
+<body>
+    <table border="1" width="50%" id="table">
+        <tr>
+            <th>学号</th>
+            <th>姓名</th>
+            <th>操作</th>
+        </tr>
+        <tr>
+            <td>xh001</td>
+            <td>王小明</td>
+            <td><a href="javascript:;" onclick="del(this)" >删除</a></td>   <!--在删除按钮上添加点击事件  -->
+        </tr>
+        <tr>
+            <td>xh002</td>
+            <td>刘小芳</td>
+            <td><a href="javascript:;" onclick="del(this)">删除</a></td>   <!--在删除按钮上添加点击事件  -->
+        </tr>
+        <tr>
+            <td>xh003</td>
+            <td>123132</td>
+            <td><a href="javascript:;" onclick="del(this)" >删除</a></td>   <!--在删除按钮上添加点击事件  -->
+        </tr>
+        <tr>
+            <td>xh004</td>
+            <td>433</td>
+            <td><a href="javascript:;" onclick="del(this)" >删除</a></td>   <!--在删除按钮上添加点击事件  -->
+        </tr>
+        <tr>
+            <td>xh005</td>
+            <td>545</td>
+            <td><a href="javascript:;" onclick="del(this)" >删除</a></td>   <!--在删除按钮上添加点击事件  -->
+        </tr>
+        <tr>
+            <td>xh006</td>
+            <td>23447</td>
+            <td><a href="javascript:;" onclick="del(this)" >删除</a></td>   <!--在删除按钮上添加点击事件  -->
+        </tr>
+        <tr>
+            <td>xh008</td>
+            <td>534</td>
+            <td><a href="javascript:;" onclick="del(this)" >删除</a></td>   <!--在删除按钮上添加点击事件  -->
+        </tr>
+        <tr>
+            <td>xh009</td>
+            <td>67</td>
+            <td><a href="javascript:;" onclick="del(this)" >删除</a></td>   <!--在删除按钮上添加点击事件  -->
+        </tr>
+        <tr>
+            <td>xh010</td>
+            <td>989</td>
+            <td><a href="javascript:;" onclick="del(this)" >删除</a></td>   <!--在删除按钮上添加点击事件  -->
+        </tr>
+    </table>
+    <br />
+    号码：<input type="text" id="get_num"/>
+    姓名：<input type="text" id="get_name"/>
+    <input type="button" value="添加一行"  onclick="add()"/>
+</body>
+</html>

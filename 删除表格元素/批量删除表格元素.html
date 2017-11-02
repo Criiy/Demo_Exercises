@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        table {
+            border-collapse: collapse;
+        }
+        td {
+            border: 1px solid #333333;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+
+            // 获取元素
+            var table = document.getElementById('table');
+            var tr = table.getElementsByTagName('tr');
+            var del = document.getElementById('del');
+
+            //绑定点击删除按钮回调函数
+            del.onclick = function() {
+
+                for (var i = 0; i < tr.length; i++) {
+                    var input = tr[i].getElementsByTagName('input')[0];
+                    if (input.checked) {
+                        tr[i].parentNode.removeChild(tr[i]);
+                    }
+                }
+            };
+
+
+        }
+    </script>
+</head>
+<body>
+<table id="table">
+    <tr>
+        <td><input type="checkbox"/></td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox"/></td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox"/></td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox"/></td>
+        <td>4</td>
+    </tr>
+</table>
+<button id="del">删除</button>
+</body>
+</html>
