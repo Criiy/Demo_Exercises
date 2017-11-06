@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo</title>
+    <style type="text/css">
+        p{
+            height: 200px;
+            background: firebrick;
+            /*text-align: center;*/
+        }
+        /*图片居中步骤*/
+
+
+        img{ /*1.Inline-block化*/
+            display: inline-block;
+            vertical-align: middle;   /*4.同时设置vertical-align:middle*/
+        }
+
+        i{  /*3.设置i标签高度100宽度0*/
+            display: inline-block;
+            height: 100%;
+            width: 0;
+            vertical-align: middle;   /*4.同时设置vertical-align:middle*/
+        }
+    </style>
+</head>
+<body>
+<p><img src="exm.jpg" style="width: 192px;height: 108px"><i></i></p>
+                                                 <!--  2. 插入i辅助标签-->
+</body>
+</html>

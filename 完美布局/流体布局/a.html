@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .a{
+            width: 100%;
+            background-color: #333333;
+            overflow: hidden; /* //父元素使用overflow：hidden*/
+        }
+    .b{
+    padding: 5px;
+    margin: 5px;
+    float: left;
+    background-color: #eee;
+    border: 1px solid #bbb;
+    color: black;
+
+    }
+        .c{
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+<div class="a">
+    <div class="b">
+        这个同样是一个 &lt;div&gt;, 左浮动，同时含有 clear: left  的 &lt;div&gt;. 因为这一段的文字内容很长，所以，按照我们通常的理解，这个 &lt;div&gt; 占据的长度应该有整个 body 这么长。但是，在 Internet Explorer 7 下，事与愿违。 这个具有左浮动，同时含有 clear: left 的 &lt;div&gt; 仅仅占据了部分body的内容区域宽度。---- 我是占位置的文字，我是占位置的文字，我是占位置的文字，我是占位置的文字，我是占位置的文字，我是占位置的文字，我是占位置的文字……
+    </div>
+    <!--<div class="c"></div>  &lt;!&ndash;//底部使用clear：both&ndash;&gt;-->
+</div>
+</body>
+</html>

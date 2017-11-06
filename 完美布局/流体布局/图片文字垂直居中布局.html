@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片文字垂直居中</title>
+    <style type="text/css">
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .box img{
+            height: 70px;
+            width: 70px;
+            vertical-align: middle;
+        }
+        .box span{
+            display: inline-block;
+            width: 220px;
+            word-break: break-all;/*自动换行*/
+
+            /*指定span的宽度顶开后面的图片，不能设置图片浮动或绝对定位（会使其block，vertical失效）*/
+
+            vertical-align: middle;
+        }
+        .box{
+            width: 300px;
+
+           /* 不指定高度！！！！！！！！！！！！！！！！！！！！！！！！！！*/
+
+            padding: 10px;
+            border: 1px solid blueviolet;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <span>asfasdfasdfaasdfasfasdfsffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff</span>
+    <img src="logo.PNG" />
+</div>
+<div class="box">
+    <span>txtasdfasdfaasdfasfasdfsfffffffffffffffffff</span>
+    <img src="logo.PNG" />
+</div>
+<div class="box">
+    <span>txt</span>
+    <img src="logo.PNG" />
+</div>
+<div class="box">
+    <span>txt</span>
+    <img src="logo.PNG" />
+</div>
+<div class="box">
+    <span>txt</span>
+    <img src="logo.PNG" />
+</div>
+</body>
+</html>
