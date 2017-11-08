@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            color: white;
+            list-style: none;
+            text-decoration: none;
+        }
+        body{
+            background: black;
+        }
+        #myRoll{
+            width: 450px;
+            margin: 50px auto;
+            border: 2px solid #666666;
+            box-shadow: 1px 1px 10px springgreen;
+            border-radius: 10px;
+        }
+        #title{
+            text-align: center;
+            color: gainsboro;
+            text-shadow: 1px 1px 10px hotpink;
+        }
+        #rollBox{
+            padding: 10px 20px;
+            height: 600px;
+            overflow: hidden;
+        }
+        #con1 a{
+            color: greenyellow;
+        }
+        #con1 span{
+            float: right;
+        }
+        #con2 a{
+            color: greenyellow;
+        }
+        #con2 span{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+<div  id="myRoll">
+    <h2 id="title">Rolling And Rolling</h2>
+    <div  id="rollBox">
+        <ul id="con1">
+            <li><a href="#">qqqqqqqqqqqqqqqqqqqqq</a><span>2017-09-18</span></li>
+            <li><a href="#">wwwwwwwwwwwwwwwwww</a><span>2017-10-09</span></li>
+            <li><a href="#">eeeeeeeeeeeeeeeeeeeeeeee</a><span>2017-10-21</span></li>
+            <li><a href="#">ddddddddddddddddddd</a><span>2017-11-01</span></li>
+            <li><a href="#">fffffffffffffffff</a><span>2017-11-06</span></li>
+            <li><a href="#">ssssssssssssssssssssss</a><span>2017-11-08</span></li>
+            <li><a href="#">vvvvvvvvvvv</a><span>2017-11-15</span></li>
+            <li><a href="#">zzzzzzzzzzzzzz</a><span>2017-11-22</span></li>
+            <li><a href="#">gggggggggggggggggg</a><span>2017-12-06</span></li>
+            <li><a href="#">qqqqqqqqqqqqqqqqqqqqq</a><span>2017-09-18</span></li>
+            <li><a href="#">wwwwwwwwwwwwwwwwww</a><span>2017-10-09</span></li>
+            <li><a href="#">eeeeeeeeeeeeeeeeeeeeeeee</a><span>2017-10-21</span></li>
+            <li><a href="#">ddddddddddddddddddd</a><span>2017-11-01</span></li>
+            <li><a href="#">fffffffffffffffff</a><span>2017-11-06</span></li>
+            <li><a href="#">ssssssssssssssssssssss</a><span>2017-11-08</span></li>
+            <li><a href="#">vvvvvvvvvvv</a><span>2017-11-15</span></li>
+            <li><a href="#">zzzzzzzzzzzzzz</a><span>2017-11-22</span></li>
+            <li><a href="#">gggggggggggggggggg</a><span>2017-12-06</span></li>
+            <li><a href="#">qqqqqqqqqqqqqqqqqqqqq</a><span>2017-09-18</span></li>
+            <li><a href="#">wwwwwwwwwwwwwwwwww</a><span>2017-10-09</span></li>
+            <li><a href="#">eeeeeeeeeeeeeeeeeeeeeeee</a><span>2017-10-21</span></li>
+            <li><a href="#">ddddddddddddddddddd</a><span>2017-11-01</span></li>
+            <li><a href="#">fffffffffffffffff</a><span>2017-11-06</span></li>
+            <li><a href="#">ssssssssssssssssssssss</a><span>2017-11-08</span></li>
+            <li><a href="#">vvvvvvvvvvv</a><span>2017-11-15</span></li>
+            <li><a href="#">zzzzzzzzzzzzzz</a><span>2017-11-22</span></li>
+            <li><a href="#">gggggggggggggggggg</a><span>2017-12-06</span></li>
+            <li><a href="#">qqqqqqqqqqqqqqqqqqqqq</a><span>2017-09-18</span></li>
+            <li><a href="#">wwwwwwwwwwwwwwwwww</a><span>2017-10-09</span></li>
+            <li><a href="#">eeeeeeeeeeeeeeeeeeeeeeee</a><span>2017-10-21</span></li>
+            <li><a href="#">ddddddddddddddddddd</a><span>2017-11-01</span></li>
+            <li><a href="#">fffffffffffffffff</a><span>2017-11-06</span></li>
+            <li><a href="#">ssssssssssssssssssssss</a><span>2017-11-08</span></li>
+            <li><a href="#">vvvvvvvvvvv</a><span>2017-11-15</span></li>
+            <li><a href="#">zzzzzzzzzzzzzz</a><span>2017-11-22</span></li>
+            <li><a href="#">gggggggggggggggggg</a><span>2017-12-06</span></li>
+        </ul>
+        <ul id="con2"></ul>
+    </div>
+</div>
+<script>
+    var rollingArea = document.getElementById("rollBox");
+    var con1 = document.getElementById("con1");
+    var con2 = document.getElementById("con2");
+    con2.innerHTML=con1.innerHTML;  //克隆一个相同的内容使其上升
+    setInterval(function () {
+        if(rollingArea.scrollTop>=con1.offsetHeight){//srcollTop向上滚动的数值   offsetHeight元素自身的高度
+            rollingArea.scrollTop=0;
+            //上升高度大于或等于自身高度时，原内容回到初始位置
+        }
+        else {
+            rollingArea.scrollTop++;//高度逐步上升
+        }
+    },50);
+
+</script>
+</body>
+</html>
