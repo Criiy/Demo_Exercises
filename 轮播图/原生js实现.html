@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>banner</title>
+    <style>
+        *{
+            padding: 0;
+            margin:0;
+            list-style: none;
+            text-decoration: none;
+        }
+        img{
+            width: 768px;
+            height: 432px;
+            float: left;
+        }
+        #box{
+            width: 768px;
+            height: 432px;
+            overflow: hidden;
+            position: relative;
+            margin: 50px auto;
+        }
+        #imgList{
+            width: 5376px;
+            height: 432px;
+            position: absolute;
+
+            z-index: 1;
+        }
+        #btn{
+            position: absolute;
+            height: 20px;
+            width: 130px;
+            left: 330px;
+            bottom: 20px;
+            z-index: 2;
+        }
+        #btn span{
+            cursor: pointer;
+            float: left;
+            border: 2px solid white;
+            border-radius: 50px;
+            background: #333333;
+            width: 15px;
+            height: 15px;
+            margin: 3px;
+        }
+        #btn .on{
+            background: white;
+        }
+        .arrow{
+            position: absolute;
+            z-index: 2;
+            cursor: pointer;
+            text-align: center;
+            font-size: 36px;
+            color: white;
+            font-weight: bold;
+            width: 40px;
+            height: 50px;
+            line-height: 49px;
+            top: 180px;
+            background-color: RGBA(0,0,0,.3);
+            display: none;
+        }
+        .arrow:hover {
+            background-color: RGBA(0,0,0,.7);
+        }
+        #box:hover .arrow {
+            display: block;
+        }
+        #prev{
+            left: 5px;
+        }
+        #next{
+            right: 5px;
+        }
+        </style>
+    <script>
+      window.onload = function () {
+          var box = document.getElementById("box");
+          var imgList = document.getElementById("imgList");
+          var btn = document.getElementById("btn").getElementsByTagName("span");
+          var prev = document.getElementById("prev");
+          var next = document.getElementById("next");
+
+
+          //封装一个改变位置的函数
+          function change(distance) {
+              var newDis = parseInt(imgList.style.left)+distance;//新位置等于旧位置加上distance值
+              imgList.style.left = newDis+"px";
+              if(newDis>-768){//如果到了第一张，继续向上减少偏移量，则跳转回最后一张的偏移量
+                  imgList.style.left = -3840+"px";
+              }
+              if(newDis<-3840){//如果到了最后一张，继续向后增加偏移量，则跳转回第一张的偏移量
+                  imgList.style.left = -768+"px";
+              }
+          }
+
+
+          //封装自动播放函数
+          var time;//定义全局变量，便于下面取消定时器
+          function autoPlay() {
+               time = setInterval(function () {
+                  next.onclick();
+              },1500)
+          }
+          autoPlay();//调用自动播放函数
+
+
+          //封装取消定时器函数
+          function stopAutoPlay() {
+              clearInterval(time);
+          }
+          box.onmouseover = stopAutoPlay; //注意是函数名称
+          box.onmouseout = autoPlay;
+
+          //添加按钮跟随样式
+          var nth = 0;
+          function btnFollow() {
+              //先所有清除原来的样式
+              for(var i=0;i<btn.length;i++){
+                  if(btn[i].className=="on"){
+                      btn[i].className="";
+                  }
+                  btn[nth].className="on";
+              }
+          }
+
+
+          //设置点击按钮题切换
+          for(var j=0;j<btn.length;j++){//给每个按钮添加一个自定的index属性
+              btn[j].setAttribute("index",j);
+          }
+
+          for (var i = 0; i < btn.length; i++) {
+              (function(i) {// 这里使用的是立即执行函数，
+                  btn[i].onclick = function() {
+                      var clickIndex = parseInt(this.getAttribute("index"));//获取点击了第几个按钮
+                      var offset = 768 * (nth - clickIndex);//当前按钮与要到点击按钮之间的偏移量
+                      change(offset);
+                      nth = clickIndex;//点击按钮变为当前按钮
+                      btnFollow();//改变当前按钮样式
+                  }
+              })(i)
+          }
+
+
+          //设置前箭头的点击事件
+          prev.onclick = function () {
+              change(768);
+              nth-=1;
+              if(nth<0){//如果小于第一个，就跳转到第五个
+                  nth=4;
+              }
+              btnFollow();
+          };
+
+
+          //设置后箭头的点击事件
+          next.onclick = function () {
+              change(-768);
+              nth+=1;
+              if(nth>4){//如果大于第五个，就跳转到第一个
+                  nth=0;
+              }
+              btnFollow();
+          };
+
+
+      };
+
+    </script>
+
+</head>
+<body>
+<div id="box">
+    <div id="imgList" style="left:-768px;" >
+        <img src="5.jpg">
+        <img src="1.jpg">
+        <img src="2.jpg">
+        <img src="3.jpg">
+        <img src="4.jpg">
+        <img src="5.jpg">
+        <img src="1.jpg">
+    </div>
+    <div id="btn">
+        <span class="on"></span>
+        <span ></span>
+        <span ></span>
+        <span ></span>
+        <span ></span>
+    </div>
+    <a href="javascript:" class="arrow" id="prev">&lt;</a>
+    <a href="javascript:" class="arrow" id="next">&gt;</a>
+</div>
+
+</body>
+</html>
