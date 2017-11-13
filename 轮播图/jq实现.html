@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin:0;
+            list-style: none;
+            text-decoration: none;
+        }
+        img{
+            width: 768px;
+            height: 432px;
+            float: left;
+        }
+        #box{
+            width: 768px;
+            height: 432px;
+            overflow: hidden;
+            position: relative;
+            margin: 50px auto;
+        }
+        #imgList{
+            width: 5376px;
+            height: 432px;
+            position: absolute;
+
+            z-index: 1;
+        }
+        #btn{
+            position: absolute;
+            height: 20px;
+            width: 130px;
+            left: 330px;
+            bottom: 20px;
+            z-index: 2;
+        }
+        #btn span{
+            cursor: pointer;
+            float: left;
+            border: 2px solid white;
+            border-radius: 50px;
+            background: #333333;
+            width: 15px;
+            height: 15px;
+            margin: 3px;
+        }
+        #btn .on{
+            background: white;
+        }
+        .arrow{
+            position: absolute;
+            z-index: 2;
+            cursor: pointer;
+            text-align: center;
+            font-size: 36px;
+            color: white;
+            font-weight: bold;
+            width: 40px;
+            height: 50px;
+            line-height: 49px;
+            top: 180px;
+            background-color: RGBA(0,0,0,.3);
+        }
+        #prev{
+            left: 5px;
+        }
+        #next{
+            right: 5px;
+        }
+    </style>
+    <script type="text/javascript" src="jquery-3.2.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            var nth = 0;
+            var box = $("#box");
+            var btn = $("#btn").find("span");
+            var imgList = $("#imgList");
+            var arrow = $(".arrow");
+            var prev = $("#prev");
+            var next = $("#next");
+            var timer = 0;
+
+
+            //设置按钮点击函数
+            btn.on("click",function (){
+                $(this).addClass("on").siblings("span").removeClass("on");//点击时增加on样式，同时兄弟的span去除on样式
+                nth=$(this).index();//点击的第几个（0开始）
+                imgList.animate({
+                    "left":-768*nth ,   //动画为向左移动；animate为动画效果函数
+                });
+            });
+
+
+            //封装运动函数
+            function change() {
+                btn.eq(nth).trigger("click");//trigger() 方法触发被选元素的指定事件类型。点击改变on样式等
+            }
+
+
+            //设定定时器
+            timer = setInterval(function (){
+                nth++;
+                if(nth==btn.length){
+                    nth=0
+                }
+               change();
+            },1500);
+
+            //鼠标悬停停止定时器效果
+            imgList.hover(function () {
+                arrow.animate({
+                    "opacity":1,
+                },200);
+                clearInterval(timer);
+            },function () {
+                arrow.animate({
+                    "opacity":.1,
+                },200);
+                timer = setInterval(function (){
+                    nth++;
+                    if(nth==btn.length){
+                        nth=0
+                    }
+                    change();
+                },1500);
+            });
+
+            //设置右切换事件
+            next.on("click",function () {
+                nth++;
+                if(nth==btn.length){
+                    nth = 0;
+                }
+                change();
+            });
+
+
+            //设置左切换事件
+            prev.on("click",function () {
+                nth--;
+                if(nth==btn.length){
+                    nth =0;
+                }
+                change();
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="box">
+    <div id="imgList" style="left:0px;" >
+        <img src="1.jpg">
+        <img src="2.jpg">
+        <img src="3.jpg">
+        <img src="4.jpg">
+        <img src="5.jpg">
+    </div>
+    <div id="btn">
+        <span class="on"></span>
+        <span ></span>
+        <span ></span>
+        <span ></span>
+        <span ></span>
+    </div>
+    <a href="javascript:" class="arrow" id="prev">&lt;</a>
+    <a href="javascript:" class="arrow" id="next">&gt;</a>
+</div>
+
+</body>
+</html>
