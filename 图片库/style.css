@@ -1,0 +1,51 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background: #cccccc;
+    width: 100%;
+}
+h1{
+    color: black;
+    text-align: center;
+}
+a{
+    color: #cc6600;
+    background: transparent;
+    font-weight: bold;
+    text-decoration: none;
+}
+ul{
+    margin-top: 20px;
+}
+.main{
+    width: 850px;
+    margin: 30px auto;
+}
+li{
+    float: left;
+    list-style: none;
+    padding: 0 10px 0 10px;
+}
+img{
+    display: block;
+    clear: both;
+}
+a img{
+    width: 192px;
+    height: 108px;
+}
+.show{
+    width: 100%;
+}
+#big{
+    width: 768px;
+    height: 432px;
+    margin: 0px auto;
+    padding: 20px;
+}
+p{
+    font-size: 19px;
+    text-align: center;
+}
