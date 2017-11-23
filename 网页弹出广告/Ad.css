@@ -1,0 +1,76 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    width: 100%;
+    height:100%;
+    background: slategray;
+}
+#ad{
+    width: 100%;
+    height: 0;
+    background: darkred;
+    display: none;
+    overflow: hidden;
+}
+.wrapper{
+    width: 1000px;
+    height: 1000px;
+    margin: 0 auto;
+    position: relative;
+    background:linear-gradient(to bottom, springgreen,navy);
+}
+#bottomAd{
+    width: 350px;
+    height: 350px;
+    background: hotpink;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}
+#close{
+    font-size: 25px;
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+}
+#leftAd{
+    width: 100px;
+    height: 180px;
+    background: red;
+    position: fixed;
+    top: 35%;
+}
+#off{
+    font-size: 25px;
+    cursor: pointer;
+}
+#up{
+    font-size: 25px;
+    cursor: pointer;
+    color: white;
+}
+#share{
+    width: 250px;
+    position: fixed;
+    top: 35%;
+    left: -200px;
+}
+#shareWay{
+    background: wheat;
+    width: 200px;
+    height: 220px;
+    float: left;
+}
+#shareBtn{
+    background: green;
+    width: 50px;
+    height: 100px;
+    float: left;
+    margin-top: 65px;
+    cursor: pointer;
+}
+.hide{
+    display: none;
+}
