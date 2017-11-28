@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        body{
+            background: #f0f0f0;
+        }
+        li{
+            float: left;
+            width: 80px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+            box-sizing: border-box;
+        }
+        li:hover{
+            background: fuchsia;
+            border: 1px solid saddlebrown;
+            border-bottom: none;
+        }
+        .now{
+            background: fuchsia;
+            border: 1px solid saddlebrown;
+            border-bottom: none;
+        }
+        .tap{
+            width: 480px;
+            height: 150px;
+            margin: 50px auto;
+            border: 1px solid saddlebrown;
+        }
+        .tapBtn{
+            height: 40px;
+            background: greenyellow;
+        }
+        .tapContent{
+            height: 110px;
+            background: fuchsia;
+            overflow: hidden;
+        }
+        .show{
+            height: 110px;
+            width: 480px;
+            position: absolute;
+            text-align: center;
+            font-size: 25px;
+            display:none;
+        }
+        .on{
+            display: block;
+        }
+
+    </style>
+    <script>
+        window.onload = function () {
+            var tap = document.getElementById("list");
+            var list = tap.getElementsByTagName("li");
+            var con = document.getElementById("tapContent");
+            var div = con.getElementsByTagName("div");
+
+
+
+            for(i=0;i<list.length;i++){
+                list[i].id = i;
+                list[i].onclick = function () {
+                    //或者onmouseover
+                    for(j=0;j<list.length;j++){
+                        list[j].className = "";
+                        div[j].className = "show"
+                    }
+                    this.className = "now";
+                    div[this.id].className += " on";
+                };
+            }
+
+
+        }
+    </script>
+</head>
+<body>
+<div class="tap">
+    <div id="tapBtn" class="tapBtn">
+        <ul id="list">
+            <li class="now">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+        </ul>
+    </div>
+    <div class="tapContent" id="tapContent">
+        <div class="show on">1</div>
+        <div class="show">sadfasdfa2</div>
+        <div class="show">3asdfasdfas</div>
+        <div class="show">4asfasfasf</div>
+        <div class="show">5safasdf</div>
+        <div class="show">6sdaf</div>
+    </div>
+</div>
+</body>
+</html>
