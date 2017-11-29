@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PicShow</title>
+    <style>
+        li{
+            float: left;
+            margin:  15px;
+        }
+        img{
+            width: 768px;
+            height: 432px;
+            float: left;
+        }
+        #slideShow{
+            width: 768px;
+            height: 432px;
+            overflow: hidden;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+
+
+            function moveElement(elementID, final_x, final_y, interval) {
+                var elem = document.getElementById(elementID);
+                if (elem.movement) {
+                    clearInterval(elem.movement);
+                }
+                var xpos = parseInt(elem.style.left);
+                var ypos = parseInt(elem.style.top);
+                var dist = 0;
+                if (xpos == final_x && ypos == final_y) {
+                    return true;
+                }
+                if (xpos < final_x) {
+                    dist = Math.ceil((final_x - xpos) / 10);
+                    xpos = xpos + dist;
+                }
+                if (xpos > final_x) {
+                    dist = Math.ceil((xpos - final_x) / 10);
+                    xpos = xpos - dist;
+                }
+                if (ypos < final_y) {
+                    dist = Math.ceil((final_y - ypos) / 10);
+                    ypos = ypos + dist;
+                }
+                if (ypos > final_y) {
+                    dist = Math.ceil((ypos - final_y) / 10);
+                    ypos = ypos - dist;
+                }
+                elem.style.left = xpos + "px";
+                elem.style.top = ypos + "px";
+                var repeat = "moveElement('" + elementID + "'," + final_x + "," + final_y + "," + interval + ")";
+                elem.movement = setTimeout(repeat, interval);
+            }
+
+
+
+            var list = document.getElementById("linkList");
+            var link = list.getElementsByTagName("a");
+            link[1].onmouseover = function () {
+                moveElement("preview",-100,0,10);
+            }
+        }
+    </script>
+</head>
+<body>
+<ol id="linkList">
+    <li>
+        <a href="#">one</a>
+    </li>
+    <li>
+        <a href="#">two</a>
+    </li>
+    <li>
+        <a href="#">three</a>
+    </li>
+    <li>
+        <a href="#">four</a>
+    </li>
+    <li>
+        <a href="#">five</a>
+    </li>
+</ol>
+<div id="slideShow">
+    <img src="1.jpg">
+    <img src="2.jpg">
+    <img src="3.jpg">
+    <img src="4.jpg">
+    <img src="5.jpg">
+</div>
+</body>
+</html>
