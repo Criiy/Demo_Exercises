@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dialog</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background: #333333;
+        }
+        #dialog{
+            width: 340px;
+            height: 400px;
+            background: darkcyan;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        #dialogTitle{
+            width: 340px;
+            height: 60px;
+            background: gray;
+            cursor: move;
+        }
+        #dialogTitle span{
+            font-size: 35px;
+            float: right;
+            margin-right: 10px;
+            margin-top: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="dialog">
+        <div id="dialogTitle">
+            <span id="close">×</span>
+        </div>
+    </div>
+
+<script>
+    //简化获取页面元素的函数，类似JQ写法
+    function g(id){
+        return document.getElementById(id);
+    }
+
+    //	自动居中元素（el = Element）
+    function autoCenter( el ){
+
+        //获取页面可视区域的宽高
+        var bodyW = document.documentElement.clientWidth;
+        var bodyH = document.documentElement.clientHeight;
+
+        //获取传进来的元素自身的宽高
+        var elW = el.offsetWidth;
+        var elH = el.offsetHeight;
+
+        //自动居中
+        el.style.left = (bodyW-elW)/2 + 'px';
+        el.style.top = (bodyH-elH)/2 + 'px';
+
+    }
+
+
+    var mouseOffsetX = 0;   //初设鼠标的X偏移量
+    var mouseOffsetY = 0;   //初设鼠标的Y偏移量
+    var isDragging = false;  //元素可否拖拽的状态，初设为false
+
+
+
+    //鼠标事件1  按下标题栏
+    g("dialogTitle").addEventListener("mousedown",function (e) {//监听事件
+        var e = e || window.event;
+        mouseOffsetX = e.pageX - g("dialog").offsetLeft;//鼠标X偏移量等于 元素在页面的x坐标 - 对话框的左值
+        mouseOffsetY = e.pageY - g("dialog").offsetTop;//鼠标Y偏移量等于 元素在页面的y坐标 - 对话框的高值
+        isDragging = true;//拖动状态为true
+    });
+
+
+    //鼠标事件2  按着标题栏，并移动鼠标时
+    document.onmousemove = function (e) {//参数e为传入的元素 g("dialog")
+        var e = e || window.event;
+
+        //把元素在页面中的坐标赋值作为鼠标的坐标
+        var mouseX = e.pageX;
+        var mouseY = e.pageY;
+
+        var moveX = 0; //鼠标移动距离X
+        var moveY = 0;//鼠标移动距离Y
+
+        if(isDragging === true){//如果在拖动状态下
+            moveX = mouseX - mouseOffsetX;//鼠标移动距离X = 鼠标的横坐标 - 鼠标的X偏移量
+            moveY = mouseY - mouseOffsetY;//鼠标移动距离Y = 鼠标的纵坐标 - 鼠标的Y偏移量
+
+
+            //范围限定，偏移量>0 且<页面可视宽度 - 对话框的宽度
+            var pageWidth = document.documentElement.clientWidth;
+            var pageHeight = document.documentElement.clientHeight;
+
+            var dialogWidth = g("dialog").offsetWidth;
+            var dialogHeight = g("dialog").offsetHeight;
+
+            //最大偏移量=页面可视宽度 - 对话框的宽度
+            var maxX = pageWidth - dialogWidth;
+            var maxY = pageHeight - dialogHeight;
+
+
+            //如果鼠标移动距离X小于0，则取0；如果大于0，则取小于最大偏移量的值
+            moveX = Math.min(maxX , Math.max(0,moveX));
+            moveY = Math.min(maxY , Math.max(0,moveY));
+
+            //改变对话框的位置
+            g("dialog").style.left = moveX + "px";
+            g("dialog").style.top = moveY + "px";
+        }
+    };
+
+
+    //鼠标事件3  松开鼠标
+    document.onmouseup = function () {
+        isDragging = false;//拖拽状态为false
+    }
+
+
+    window.onload = function () {
+        autoCenter(g("dialog"));
+    }
+
+    window.onresize = function () {//当页面的尺寸发生改变时
+        autoCenter(g("dialog"));//保持对话框的居中
+    }
+</script>
+</body>
+</html>
