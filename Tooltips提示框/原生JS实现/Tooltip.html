@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tooltip</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            font-size: 18px;
+            font-family: "Microsoft YaHei", "微软雅黑";
+        }
+        #demo {
+            width: 500px;
+            margin: 30px auto;
+            padding: 20px 30px;
+            position: relative;
+            background-color: #fff;
+        }
+        #demo .tooltip {
+            color: #03F;
+            cursor: help;
+        }
+        .tooltip-box{
+            font-size: 14px;
+            background: white;
+            color: royalblue;
+            border: 1px solid red;
+            border-radius: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div id="demo">
+    <p>
+        <a class="tooltip" id="tooltip1">What's up!</a>
+        <br>
+        Hello guys, this is the tooltip demo
+        <a class="tooltip" id="tooltip2">Detail</a>
+        <br>
+        hey <a class="tooltip" id="tooltip3">Follow me</a>
+    </p>
+</div>
+<script src="Tooltip.js"></script>
+</body>
+</html>
