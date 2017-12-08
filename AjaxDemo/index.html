@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+<body>
+<h2>Staff Members</h2>
+<label>Enter staff number:</label>
+<input type="text" id="keyNum">
+<button id="search">Search</button>
+<p id="searchResult"></p>
+
+<h2>Staff Creating</h2>
+<label>Staff name:</label>
+<input type="text" id="staffName">
+<br>
+<label>Staff number:</label>
+<input type="text" id="staffNum">
+<br>
+<label>Staff gender:</label>
+<select id="staffGender">
+    <option>male</option>
+    <option>female</option>
+</select>
+<br>
+<label>Staff job:</label>
+<input type="text" id="staffJob">
+<button id="save">Save</button>
+
+
+<script>
+    var searchBtn = document.getElementById("search");
+    searchBtn.onclick = function () {
+        //发送Ajax查询请求并处理
+        var request = new XMLHttpRequest();
+        var numberVal = document.getElementById("keyNum").value;
+        request.open("GET","server.php?number="+numberVal);
+        request.send();
+
+        request.onreadystatechange = function () {
+            if(request.readyState === 4){
+                if (request.status === 200){
+                    document.getElementById("searchResult").innerHTML = request.responseText;
+                }
+                else {
+                    alert("Error:"+request.status);
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>
