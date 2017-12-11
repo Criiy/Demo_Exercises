@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+<body>
+<h2>Staff Members</h2>
+<label>Enter staff number:</label>
+<input type="text" id="keyNum">
+<button id="search">Search</button>
+<p id="searchResult"></p>
+
+<h2>Staff Creating</h2>
+<label>Staff name:</label>
+<input type="text" id="staffName">
+<br>
+<label>Staff number:</label>
+<input type="text" id="staffNum">
+<br>
+<label>Staff gender:</label>
+<select id="staffGender">
+    <option>male</option>
+    <option>female</option>
+</select>
+<br>
+<label>Staff job:</label>
+<input type="text" id="staffJob">
+<button id="save">Save</button>
+<p id="saveResult"></p>
+
+
+<script>
+    var searchBtn = document.getElementById("search");
+    searchBtn.onclick = function () {
+        var request = new XMLHttpRequest();
+        var numberVal = document.getElementById("keyNum").value;
+        request.open("GET","serverjson.php?number="+numberVal);
+        request.send();
+        request.onreadystatechange = function () {
+            if(request.readyState === 4){
+                if(request.status === 200){
+                    var date = JSON.parse(request.responseText);
+                    var result = document.getElementById("searchResult");
+                    if(date.success){
+                        result.innerHTML = date.msg;
+                    }else {
+                        result.innerHTML = "Error:"+date.msg;
+                    }
+                }else {
+                    alert("Error:"+request.status);
+                }
+            }
+        }
+    };
+
+
+    var saveBtn = document.getElementById("save");
+    saveBtn.onclick = function () {
+        var request = new XMLHttpRequest();
+        request.open("POST","serverjson.php");
+        var staffName = document.getElementById("staffName").value;
+        var staffNum = document.getElementById("staffNum").value;
+        var staffGender = document.getElementById("staffGender").value;
+        var staffJob = document.getElementById("staffJob").value;
+
+        var data = "name=" + staffName + "&number=" + staffNum + "&sex=" + staffGender + "&job=" + staffJob;
+        request.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+        request.send(data);
+        request.onreadystatechange = function () {
+            if(request.responseText ===4){
+                if(request.status ===200){
+                    var data = JSON.parse(request.responseText);
+                    var saveResult = document.getElementById("saveResult");
+                    if(data.success){
+                        saveResult.innerHTML = data.msg;
+                    }else {
+                        saveResult.innerHTML = "Error:"+data.msg;
+                    }
+                }else {
+                    alert("Error:"+request.status);
+                }
+            }
+        }
+    }
+</script>
+
+
+</body>
+</html>
