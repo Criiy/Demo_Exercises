@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <script src="jquery-3.2.1.js"></script>
+</head>
+<body>
+<h2>Staff Members</h2>
+<label>Enter staff number:</label>
+<input type="text" id="keyNum">
+<button id="search">Search</button>
+<p id="searchResult"></p>
+
+<h2>Staff Creating</h2>
+<label>Staff name:</label>
+<input type="text" id="staffName">
+<br>
+<label>Staff number:</label>
+<input type="text" id="staffNum">
+<br>
+<label>Staff gender:</label>
+<select id="staffGender">
+    <option>male</option>
+    <option>female</option>
+</select>
+<br>
+<label>Staff job:</label>
+<input type="text" id="staffJob">
+<button id="save">Save</button>
+<p id="saveResult"></p>
+
+
+<script>
+    $(document).ready(function(){
+        $("#search").click(function(){
+            $.ajax({
+                type: "GET",
+                url: "http://localhost/Ajaxdemo/serverjq.php?number=" + $("#keyNum").val(),
+                dataType: "json",
+                success: function(data) {
+                    if (data.success) {
+                        $("#searchResult").html(data.msg);
+                    } else {
+                        $("#searchResult").html("Erroe：" + data.msg);
+                    }
+                },
+                error: function(jqXHR){
+                    alert("Error：" + jqXHR.status);
+                },
+            });
+        });
+
+        $("#save").click(function () {
+            $.ajax({
+                type: "POST",
+                url:"serverjq.php",
+                data:{
+                    name: $("#staffName").val(),
+                    number: $("#staffNum").val(),
+                    sex: $("#staffGender").val(),
+                    job: $("#staffJob").val()
+                },
+                dataType: "json",
+                success:function (data) {
+                    if(data.success){
+                        $("#saveResult").html(data.msg);
+                    } else {
+                        $("#saveResult").html("Error:"+data.msg);
+                    }
+                },
+                error:function (jqXHR) {
+                    alert("Error:"+jqXHR.status);
+                }
+            })
+        });
+
+
+
+    });
+</script>
+</body>
+</html>
