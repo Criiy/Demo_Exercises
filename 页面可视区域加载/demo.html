@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+    <script src="jquery-3.2.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="top"></div>
+<div class="nav"></div>
+<div class="main">
+    <div class="showPic" id="showPic">
+        <img class="pic">
+        <img class="pic">
+        <img class="pic">
+        <img class="pic">
+        <img class="pic">
+    </div>
+</div>
+<script>
+    function showPic() {
+        var showArea = document.getElementById("showPic");
+        var imgs = showArea.children;
+        //获取每张图片
+        var client = window.outerHeight;
+        //获取窗口高度
+        for(var i=0;i<imgs.length;i++) {//遍历每张图片
+            var top = imgs[i].getBoundingClientRect().top;//获取每张图片到顶部的高度，比offsetTop兼容性好
+            if (top <= client) {//当图片到顶部的高度小于窗口大小时，图片显示
+                imgs[i].classList.remove("pic");
+                var imgSrc = i+1+".jpg";
+                imgs[i].setAttribute("src", imgSrc);
+            }
+        }
+
+    }
+    window.onscroll = showPic;
+</script>
+</body>
+</html>
