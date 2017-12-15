@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page demo_jq</title>
+    <script src="jquery-3.2.1.js"></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background: #333333;
+        }
+        .main{
+            width: 700px;
+            background: skyblue;
+            margin: 0 auto;
+        }
+        .content{
+            width: 700px;
+            height: 500px;
+            line-height: 500px;
+            text-align: center;
+            font-size: 60px;
+            word-break: break-all;
+            border-bottom: 4px solid black;
+        }
+    </style>
+</head>
+<body>
+<div class="main" id="main">
+    <div class="content">Your content here :)</div>
+    <div class='content'>Your content here :)</div>
+    <div class="content">Your content here :)</div>
+</div>
+<script>
+    function addContent() {//添加子元素函数
+        var newDiv = document.createElement("div");
+        newDiv.className = "content";
+        newDiv.innerHTML = "Your content here :)";
+        main.appendChild(newDiv);
+    }
+
+    $(window).scroll(function () {
+        var client = $(window).height();
+        var whole = $(document).height();
+        var scrolltop = $(window).scrollTop();
+
+        if(client+scrolltop >= whole-100){
+            addContent();
+        }
+    })
+</script>
+</body>
+</html>
