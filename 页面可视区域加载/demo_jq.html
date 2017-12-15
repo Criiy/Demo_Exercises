@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo_jq</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="jquery-3.2.1.js"></script>
+</head>
+<body>
+<div class="top"></div>
+<div class="nav"></div>
+<div class="main">
+    <div class="showPic" id="showPic">
+        <img class="pic">
+        <img class="pic">
+        <img class="pic">
+        <img class="pic">
+        <img class="pic">
+    </div>
+</div>
+<script>
+    $(window).scroll(function () {
+       var client = $(window).height();
+       var scrollTop = $(window).scrollTop();
+       var imgs = $("#showPic").children(".pic");
+
+
+       for(var i=0;i<imgs.length;i++){
+           var top = imgs.eq(i).offset().top;//注意是eq()
+           var imgSrc = i+1 + ".jpg";
+           if(client+scrollTop >= top){
+               imgs.eq(i).attr("src",imgSrc);
+           }
+       }
+
+    });
+</script>
+</body>
+</html>
