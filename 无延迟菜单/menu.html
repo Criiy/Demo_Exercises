@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu</title>
+    <script src="jquery-3.2.1.js"></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .wrap{
+            position: relative;
+            width: 180px;
+            left: 50px;
+            top: 50px;
+        }
+        ul{
+            list-style: none;
+            background: #6c6669;
+            color: white;
+        }
+        li{
+            position: relative;
+            display: block;
+            height: 50px;
+            line-height: 50px;
+            padding-left: 12px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        li.active{
+            background: #999395;
+        }
+        li span:hover{
+            color: firebrick;
+        }
+        .none{
+            display: none;
+        }
+        #sub{
+            position: absolute;
+            width: 600px;
+            border: 1px solid saddlebrown;
+            background: #f7f7f7;
+            box-sizing: border-box;
+            box-shadow: 2px 0 5px rgba(0,0,0,.3);
+            left: 180px;
+            top: 0;
+            padding: 10px;
+        }
+        .subContent a{
+            font-size: 14px;
+            color: #666;
+            text-decoration: none;
+        }
+        .subContent dd a{
+            box-shadow: -1px 2px  #666666;
+            padding: 0 10px;
+            margin: 4px 0;
+        }
+        .subContent dl{
+            overflow: hidden;
+            margin: 15px 0;
+        }
+        .subContent dt{
+            position: relative;
+            float: left;
+            width: 80px;
+            clear: left;
+            font-weight: bold;
+        }
+        .subContent dd{
+            float: left;
+            margin-left: 5px;
+            border-bottom: 5px;
+        }
+        .subContent dt i{
+            position: absolute;
+            width: 4px;
+            height: 14px;
+            font: 400 9px/14px consolas;
+            right: 5px;
+            top: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap" id="menu">
+    <ul>
+        <li data-id="a">
+            <span>first floor</span>
+        </li>
+        <li data-id="b">
+            <span>second floor</span>
+        </li>
+        <li data-id="c">
+            <span>third floor</span>
+        </li>
+        <li data-id="d">
+            <span>forth floor</span>
+        </li>
+        <li data-id="e">
+            <span>fifth floor</span>
+        </li>
+        <li data-id="f">
+            <span>sixth floor</span>
+        </li>
+    </ul>
+    <div id="sub" class="none">
+        <div id="a" class="subContent none">
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">1ST Item1<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item one here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">1ST Item2<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item two here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">1ST Item3<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item three here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">1ST Item4<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item four here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">1ST Item5<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item five here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">1ST Item6<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item six here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">1ST Item7<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item seven here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">1ST Item8<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item eight here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">1ST Item9<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item nine here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+        </div>
+        <div id="b" class="subContent none">
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">2ND Item1<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item one here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">1ST Item2<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item two here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">1ST Item3<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item three here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">1ST Item4<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item four here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">1ST Item5<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item five here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">1ST Item6<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item six here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">1ST Item7<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item seven here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">1ST Item8<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item eight here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">1ST Item9<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item nine here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+        </div>
+        <div id="c" class="subContent none">
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">3RD Item1<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item one here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">1ST Item2<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item two here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">1ST Item3<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item three here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">1ST Item4<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item four here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">1ST Item5<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item five here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">1ST Item6<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item six here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">1ST Item7<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item seven here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">1ST Item8<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item eight here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">1ST Item9<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item nine here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+        </div>
+        <div id="d" class="subContent none">
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">4TH Item1<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item one here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">1ST Item2<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item two here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">1ST Item3<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item three here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">1ST Item4<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item four here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">1ST Item5<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item five here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">1ST Item6<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item six here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">1ST Item7<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item seven here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">1ST Item8<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item eight here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">1ST Item9<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item nine here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+        </div>
+        <div id="e" class="subContent none">
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">5TH Item1<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item one here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">1ST Item2<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item two here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">1ST Item3<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item three here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">1ST Item4<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item four here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">1ST Item5<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item five here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">1ST Item6<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item six here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">1ST Item7<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item seven here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">1ST Item8<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item eight here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">1ST Item9<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item nine here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+        </div>
+        <div id="f" class="subContent none">
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">1ST Item1<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item one here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">1ST Item2<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item two here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">1ST Item3<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item three here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">1ST Item4<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item four here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">1ST Item5<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item five here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">1ST Item6<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item six here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">1ST Item7<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item seven here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">1ST Item8<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item eight here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="#" target="_blank">1ST Item9<i>&gt;</i></a>
+                </dt>
+                <dd>
+                    <a href="#" target="_blank">Sub item nine here</a>
+                    <a href="#" target="_blank">This</a>
+                    <a href="#" target="_blank">is</a>
+                    <a href="#" target="_blank">the</a>
+                    <a href="#" target="_blank">item's</a>
+                    <a href="#" target="_blank">introduction</a>
+                </dd>
+            </dl>
+        </div>
+    </div>
+</div>
+<script src="menu.js"></script>
+</body>
+</html>
