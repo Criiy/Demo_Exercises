@@ -1,0 +1,224 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+body{
+    text-align: center;
+    color: #333333;
+    font-size: 13px;
+}
+a{
+    color: #333333;
+    text-decoration: none;
+    cursor: pointer;
+}
+.clearfix:after{
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.clearfix{
+    *height: 1%;
+}
+#list{
+    margin: 0 auto;
+    text-align: left;
+    width: 540px;
+}
+.box {
+    border-top: 1px solid #eee;
+    position: relative;
+    width: 540px;
+    padding: 20px 0
+}
+.box:hover .close {
+    display: block;
+}
+.close {
+    display: none;
+    top:0;
+    right: 0;
+    width: 28px;
+    height: 28px;
+    font-size: 19px;
+    border: 1px solid #eee;
+    position: absolute;
+    background: #f2f4f7;
+    line-height: 27px;
+    text-align: center;
+}
+.close:hover {
+    background: #c8d2e2;
+    text-decoration: none;
+}
+.head {
+    float: left;
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+}
+.content {
+    float: left;
+    width: 440px;
+}
+.main {
+    margin-bottom: 10px;
+}
+.txt {
+    margin-bottom: 10px;
+    word-break: break-all;
+}
+.user {
+    color: #369;
+    font-size: 15px;
+}
+.pic {
+    margin-right: 5px;
+    width: 200px;
+    border: 1px solid #eee;
+}
+.info {
+    height: 20px;
+    line-height: 19px;
+    font-size: 12px;
+    margin: 0 0 10px 0;
+}
+.info .time {
+    color: #ccc;
+    float: left;
+    height: 20px;
+    padding-left: 20px;
+    background: url("images/bg1.jpg") no-repeat left top;
+}
+.info .praise {
+    color: #369;
+    float: right;
+    height: 20px;
+    padding-left: 18px;
+    background: url("images/bg2.jpg") no-repeat left top;
+}
+.info .praise:hover {
+    text-decoration: underline;
+    background: url("images/bg3.jpg") no-repeat left top;
+}
+.praisesTotal {
+    margin: 0 0 10px 0;
+    height: 20px;
+    background: url("images/praise.png") no-repeat 5px 5px rgb(247, 247, 247);
+    padding: 5px 0 5px 25px;
+    line-height: 19px;
+    font-size: 13px;
+    vertical-align: bottom;
+}
+.commentBox {
+    padding: 10px 0;
+    border-top: 1px solid #eee;
+}
+.commentBox:hover {
+    background: rgb(247, 247, 247);
+}
+.commentBox .myHead {
+    float: left;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+.commentBox .commentContent {
+    float: left;
+    width: 400px;
+}
+.commentBox .commentContent .commentText{
+    word-break: break-all;
+}
+.commentBox .commentContent .commentTime {
+    color: #ccc;
+    margin-top: 3px;
+    line-height: 16px;
+    position: relative;
+    font-size: 12px;
+}
+.commentBox .commentContent .commentPraise {
+    display: none;
+    color: #369;
+    padding-left: 17px;
+    height: 20px;
+    background: url("images/praise.png") no-repeat;
+    position: absolute;
+    bottom: 0;
+    right: 52px;
+}
+.commentBox .commentContent .commentOperate {
+    display: none;
+    color: #369;
+    height: 20px;
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+}
+.commentBox .commentContent:hover .commentPraise {
+    display: inline-block;
+}
+.commentBox .commentContent:hover .commentOperate {
+    display: inline-block;
+}
+.textBox .comment {
+    border: 1px solid #eee;
+    display: block;
+    height: 15px;
+    width: 428px;
+    padding: 5px;
+    resize: none;
+    color: #ccc
+}
+.textBox .btn {
+    font-size: 12px;
+    font-weight: bold;
+    display: none;
+    float: right;
+    width: 65px;
+    height: 25px;
+    border: 1px solid #0C528D;
+    color: #fff;
+    background: #4679AC;
+}
+.textBox .btn-off {
+    border: 1px solid #ccc;
+    color: #ccc;
+    background: #F7F7F7;
+}
+.textBox .word{
+    display: none;
+    float: right;
+    margin: 7px 10px 0 0;
+    color: #666;
+}
+.textBox-on .comment{
+    height: 50px;
+    color: #333;
+}
+.textBox-on .btn{
+    display: inline;
+}
+.textBBox-on .word{
+    display: inline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
