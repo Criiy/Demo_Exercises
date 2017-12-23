@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .rating{
+            width: 250px;
+            height: 50px;
+            margin:  0 auto;
+        }
+        .star{
+            float: left;
+            height: 50px;
+            width: 50px;
+            background: url("images/stars.png") no-repeat;
+            cursor: pointer;
+        }
+    </style>
+    <script src="jquery-3.2.1.js"></script>
+</head>
+<body>
+<div class="rating" id="rating">
+    <div class="star" title="Too bad"> </div>
+    <div class="star" title="bad"></div>
+    <div class="star" title="normal"></div>
+    <div class="star" title="good"></div>
+    <div class="star" title="excellent"></div>
+</div>
+
+<script>
+    var num = 0;//初始化点亮颗数
+    var $rating = $("#rating");
+    var $star = $rating.find(".star");
+
+
+    //点亮函数
+    var turnOn = function (number) {//传进的参数number，一般是鼠标悬停获取的当前星星的索引值
+        $star.each(function (index) {//遍历每个星星，Index为当前星星的索引
+            if(index < number){//如果当前小于传进的参数number时，改变背景图片位置，然后继续下一个index，指导完成遍历
+                $(this).css("background-position","0 -50px");
+            } else {
+                $(this).css("background-position","0 0");
+            }
+        });
+    };
+
+
+    turnOn(num);//先点亮默认设置的星星
+
+    $star.on("mouseover",function () {//绑定鼠标悬停函数
+        turnOn($(this).index() + 1);
+    }).on("click",function () {//绑定鼠标点击函数
+        num = $(this).index() + 1;//改变默认值
+        console.log($(this));
+    });
+
+    $rating.on("mouseout",function () {//绑定鼠标离开函数
+        turnOn(num);
+    })
+
+</script>
+</body>
+</html>

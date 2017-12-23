@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .rating{
+            width: 250px;
+            height: 50px;
+            margin:  0 auto;
+        }
+        .star{
+            float: left;
+            height: 50px;
+            width: 50px;
+            background: url("images/stars.png") no-repeat;
+            cursor: pointer;
+        }
+    </style>
+    <script src="jquery-3.2.1.js"></script>
+</head>
+<body>
+<div class="rating" id="rating">
+    <div class="star" title="Too bad"> </div>
+    <div class="star" title="bad"></div>
+    <div class="star" title="normal"></div>
+    <div class="star" title="good"></div>
+    <div class="star" title="excellent"></div>
+</div>
+
+<div class="rating" id="rating2">
+    <div class="star" title="Too bad"> </div>
+    <div class="star" title="bad"></div>
+    <div class="star" title="normal"></div>
+    <div class="star" title="good"></div>
+    <div class="star" title="excellent"></div>
+</div>
+
+<div class="rating" id="rating3">
+    <div class="star" title="Too bad"> </div>
+    <div class="star" title="bad"></div>
+    <div class="star" title="normal"></div>
+    <div class="star" title="good"></div>
+    <div class="star" title="excellent"></div>
+</div>
+
+<div class="rating" id="rating4">
+    <div class="star" title="Too bad"> </div>
+    <div class="star" title="bad"></div>
+    <div class="star" title="normal"></div>
+    <div class="star" title="good"></div>
+    <div class="star" title="excellent"></div>
+</div>
+
+<script>
+
+    //自我执行的匿名函数,减少全局变量
+   var rating = (function () {
+
+       //点亮星星函数
+       var turnOn = function ($star,number) {//传star，后面传rating，有事件代理
+           $star.each(function (index) {
+               if(index < number){
+                   $(this).css("background-position","0 -50px");
+               } else {
+                   $(this).css("background-position","0 0");
+               }
+           });
+       };
+
+       //封装初始化函数
+        var init = function (el, num) {//el是传进来的元素id，num是初始化默认的点亮星星数
+            var $rating = $(el);
+            var $star = $rating.find(".star");
+
+            //先调用一次点亮函数
+            turnOn($star,num);
+
+            $rating.on("mouseover", ".star", function () {
+                turnOn($star,$(this).index() + 1);
+            }).on("click",".star",function () {
+                num = $(this).index() + 1;
+            }).on("mouseout",function () {
+                turnOn($star,num);
+            });
+
+
+
+        };
+
+
+        //做成JQ插件
+        $.fn.extend({
+           rating:function (num) {
+               return this.each(function () {
+                   init(this,num);
+               })
+           }
+        });
+
+        //返回Init这个对象
+       return {
+           init:init
+       };
+
+
+
+
+    })();
+
+
+   //普通调用，通过调用rating的init属性
+    rating.init("#rating",2);
+    rating.init("#rating2",3);
+    rating.init("#rating3",0);
+
+
+    //通过JQ插件调用
+    $("#rating4").rating(4);
+
+
+
+
+
+</script>
+</body>
+</html>
