@@ -1,0 +1,26 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+li{
+    list-style: none;
+}
+body{
+    font-size: 12px;
+}
+
+img{
+    border: none;
+}
+
+input,select,textarea{
+    outline: none;
+}
+
+textarea{
+    resize: none;
+}
+
+a{
+    text-decoration: none;
+}
