@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .rating{
+            width: 250px;
+            height: 50px;
+            margin:  0 auto;
+        }
+        .star{
+            float: left;
+            height: 50px;
+            width: 50px;
+            background: url("images/stars.png") no-repeat;
+            cursor: pointer;
+        }
+    </style>
+    <script src="jquery-3.2.1.js"></script>
+</head>
+<body>
+<div class="rating" id="rating">
+    <div class="star" title="Too bad"> </div>
+    <div class="star" title="bad"></div>
+    <div class="star" title="normal"></div>
+    <div class="star" title="good"></div>
+    <div class="star" title="excellent"></div>
+</div>
+
+<script>
+
+    /*************************************************下面是OOP写法***********************************************/
+
+    //用一个全局变量来接收这个立即执行的函数，便于调用
+    var rating = (function () {
+
+        //点亮全部星星的函数
+        var lightEntire = function (el,options) {
+            this.$el = $(el);//也就是rating
+            this.$star = this.$el.find(".star");
+            this.opts = options;//传进来的options参数保存给this.opts
+        };
+
+        //在lightEntire的原型链上加上init方法
+        lightEntire.prototype.init = function () {
+            //init方法调用两个函数，lightOn和bindEvent
+            this.lightOn(this.opts.num);
+            this.bindEvent();
+        };
+
+        //在lightEntire的原型链上加上lightOn方法
+        lightEntire.prototype.lightOn = function (num) {
+            parseInt(num);
+            this.$star.each(function (index) {
+                if(index < num){
+                    $(this).css("background-position","0 -50px");
+                } else {
+                    $(this).css("background-position","0 0");
+                }
+            });
+
+        };
+        //在lightEntire的原型链上加上bindEvent方法
+        lightEntire.prototype.bindEvent = function () {
+            //只有这里的this是指向lightEntire,下面的事件调用改变了this的指向，所以先将指向lightEntire的this保存在self中
+            var self = this;
+            this.$el.on("mouseover", ".star", function () {
+
+                self.lightOn($(this).index() + 1);
+
+                //这里的this要用call方法改回原来的指向
+                //只有在(typeof self.opts.select === "function")为真的情况下才执行
+                (typeof self.opts.select === "function") && self.opts.select.call(this,$(this).index() + 1,self.$star.length);
+
+                self.$el.trigger("select",[$(this).index(),self.$star.length]);
+
+            }).on("click",".star",function () {
+
+                self.opts.num = $(this).index() + 1;
+                (typeof self.opts.chosen === "function") && self.opts.chosen.call(this,self.opts.num + 1,self.$star.length);
+                self.$el.trigger("chosen",[self.opts.num,self.$star.length]);
+
+            }).on("mouseout",function () {
+                self.lightOn(self.opts.num);
+                //回到默认值
+            });
+        };
+
+        //设置默认值
+        var defaults = {
+          num:0,
+          readOnly:false,
+          select:function () {
+
+          }  ,
+            chosen:function () {
+
+            }
+        };
+
+
+        //初始化方法
+        var init= function (el,options) {
+            options = $.extend({},defaults,options);
+            //用option的内容覆盖defaut内容，将生成的内容存放到空对象{}中，再返回出来，然后保存到options中
+            new  lightEntire(el,options).init();
+            //通过new一个实例来调用
+        };
+
+        return {
+            init:init
+            //返回init这个对象的方法
+        };
+    })();
+
+    /*************************************************下面是调用***********************************************/
+
+    //初始化
+    rating.init("#rating",{
+        num:2
+        /*select:function (num,total) {
+            console.log(num + "/" + total);
+        }*/
+    });
+
+    //这里要通过事件调用
+    $("#rating").on("select",function (e, num, total) {//注意第一个传进的e是事件
+        console.log(num+1 + "/" + total);
+    }).on("chosen",function (e, num, total) {
+        console.log(num + "/" + total);
+    });
+
+</script>
+</body>
+</html>
