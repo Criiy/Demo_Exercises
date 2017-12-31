@@ -1,0 +1,19 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+li{  list-style: none;  }
+body{  font-size: 12px;  }
+img{  border: none;  }
+input,select,textarea{  outline: none; background: none }
+textarea{  resize: none;  }
+a{  text-decoration: none; color: #656565; }
+.clearfix:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.clearfix{zoom:1;}
+.fl{float: left;}
+.fr{float: right;}
+input{border: none;}
