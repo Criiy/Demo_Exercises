@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <style>
+        *{
+            padding:0;
+            margin: 0;
+        }
+        #demo{
+            margin: 30px 0 0 30px;
+        }
+        #small{
+            position: relative;
+            width: 480px;
+            height: 270px;
+            border: 1px solid #333333;
+            text-align: center;
+            float: left;
+            margin-right: 20px;
+        }
+        #small img{
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            width: 384px;
+            height: 216px;
+            z-index: 4;
+        }
+        #floatLayer{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: midnightblue;
+            opacity: .6;
+            cursor: move;
+            z-index: 5;
+            display: none;
+        }
+        #big{
+            position: relative;
+            width: 768px;
+            height: 432px;
+            overflow: hidden;
+            display: none;
+            margin-left: 20px;
+        }
+        #big img{
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div id="demo">
+    <div id="small">
+        <div id="floatLayer"></div>
+        <img src="1.jpg">
+    </div>
+    <div id="big">
+        <img src="1.jpg">
+    </div>
+</div>
+
+
+<script src="index.js"></script>
+</body>
+</html>
