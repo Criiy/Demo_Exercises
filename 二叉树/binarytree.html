@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>binaryTree</title>
+</head>
+<body>
+
+<script>
+    //二叉树
+    function BinaryTree() {
+        /*节点对象*/
+        var Node = function (key) {
+            this.key = key;
+            /*默认传进来的值就是赋给二叉树的值*/
+            this.left = null;
+            this.right = null;
+            /*默认左右孩子为空*/
+        };
+        
+        var root = null;
+        /*默认根节点为空*/
+
+        /*下面是插入传进来节点的排序操作*/
+        var insertNode = function (node, newNode) {
+            if(newNode.key < node.key){
+                /*如果新传进来的值小于当前节点的值，就插在树的左边*/
+                if (node.left === null){
+                    node.left = newNode;
+                    /*如果当前节点的左孩子为空，则新传进来的节点是当前节点的左孩子*/
+                } else {
+                    insertNode(node.left,newNode);
+                    /*如果当前节点的左孩子存在，则再调用自身insertNode函数，直到找出节点没有做孩子为止插入新节点*/
+                }
+            } else {
+                if (node.right === null){
+                    node.right = newNode;
+                } else {
+                    insertNode(node.right,newNode);
+                }
+            }
+        };
+
+        /*外部调用插入操作*/
+        this.insert =function (key) {
+            var newNode = new Node(key);
+            if(root === null) {
+                root = newNode;
+            } else {
+                insertNode(root,newNode);
+            }
+        };
+    }
+
+    var nodes = [3,23,3,4,4324,234,432,54,236,56,7];
+    var binaryTree = new BinaryTree();
+    nodes.forEach(function (key) { binaryTree.insert(key) });
+
+
+
+
+</script>
+
+</body>
+</html>
