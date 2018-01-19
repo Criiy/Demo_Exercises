@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>postOrderTraverse</title>
+</head>
+<body>
+
+<script>
+
+    function BinaryTree() {
+        var Node = function (key) {
+            this.key = key;
+            this.left = null;
+            this.right = null;
+        };
+
+        var root = null;
+
+        var insertNode = function (node, newNode) {
+            if(newNode.key < node.key){
+                if (node.left === null){
+                    node.left = newNode;
+                } else {
+                    insertNode(node.left,newNode);
+                }
+            } else {
+                if (node.right === null){
+                    node.right = newNode;
+                } else {
+                    insertNode(node.right,newNode);
+                }
+            }
+        };
+
+        this.insert =function (key) {
+            var newNode = new Node(key);
+            if(root === null) {
+                root = newNode;
+            } else {
+                insertNode(root,newNode);
+            }
+        };
+
+        //后序遍历实现
+        var postOrderTraverseNode = function (node, pumpOut) {
+            if(node !== null) {
+                //先进入左子树，回调自身函数，重复后序遍历操作
+                postOrderTraverseNode(node.left,pumpOut);
+                //再进入右子树，回调自身函数，重复后序遍历操作
+                postOrderTraverseNode(node.right,pumpOut);
+                //最后打印中间节点，执行callback函数，打印节点
+                pumpOut(node.key);
+            }
+        };
+
+        //外部后序遍历接口
+        this.postOrderTraverse = function (pumpOut) {
+            postOrderTraverseNode(root,pumpOut);
+        };
+
+
+    }
+
+
+    //新建一颗二叉树
+    var nodes = [3,23,120,4,4324,234,432,54,236,56,7];
+    var binaryTree = new BinaryTree();
+    nodes.forEach(function (key) { binaryTree.insert(key) });
+
+    //定义泵出节点函数
+    var pumpOut = function (key) {
+        console.log(key);
+    };
+
+    //实现后序遍历
+    binaryTree.postOrderTraverse(pumpOut);
+
+    </script>
+
+</body>
+</html>
