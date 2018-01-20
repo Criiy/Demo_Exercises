@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page Demo</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background: #333333;
+        }
+        .main{
+            width: 700px;
+            background: skyblue;
+            margin: 0 auto;
+        }
+        .content{
+            width: 700px;
+            height: 500px;
+            line-height: 500px;
+            text-align: center;
+            font-size: 60px;
+            word-break: break-all;
+            border-bottom: 4px solid black;
+        }
+    </style>
+</head>
+<body>
+<div class="main" id="main">
+    <div class="content">Your content here :)</div>
+    <div class="content">Your content here :)</div>
+    <div class="content">Your content here :)</div>
+</div>
+<script>
+    function addContent() {//添加子元素函数
+        var newDiv = document.createElement("div");
+        newDiv.className = "content";
+        newDiv.innerHTML = "Your content here :)";
+        var main = document.getElementById("main");
+        main.appendChild(newDiv);
+    }
+    function isBottom() {//判断是否到达底部
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        //获取滚动条向上卷去的高度，兼容写法
+        console.log(scrollTop);
+
+        var client = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+        //注意不要用.style.height（兼容问题）,clientHeight还包括padding
+        //页面窗口的高度
+        console.log(client);
+
+        var whole = document.body.scrollHeight;
+        //整个高度
+        console.log(whole);
+
+        if(scrollTop+client >= whole-100){//增加用户体验（不是到最低才加载），如果卷去高度+窗口高度大于等于整个高度—100px时，添加子元素
+            addContent();
+        }
+    }
+    window.onscroll = isBottom;
+</script>
+</body>
+</html>
