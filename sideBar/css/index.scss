@@ -1,0 +1,79 @@
+@charset "utf-8";
+
+$item-size: 52px;
+$item-margin-top: 1px;
+$item-font-color: green;
+$item-font-hover-color: red;
+
+*{
+  padding: 0;
+  margin: 0;
+}
+body{
+  background: #666666;
+}
+.main{
+  width: 1000px;
+  margin: 0 auto;
+}
+.toolbar{
+  position: fixed;
+  bottom: 50px;
+  right: 300px;
+}
+.item{
+  display: block;
+  width: $item-size;
+  height: $item-size;
+  color: $item-font-color;
+  background: url("../img/toolbar.png") no-repeat;
+  margin-top: $item-margin-top;
+  transition: .5s;
+
+  &:hover{
+    .layer{
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+.wechat{
+  background-position: 0 -798px;
+  &:hover{
+    background-position: 0 -860px;
+  }
+  .layer{
+    height: 212px;
+    background-position: 0 0;
+  }
+}
+.contact{
+  background-position: 0 -426px;
+  &:hover{
+    background-position: 0 -488px;
+  }
+}
+.app{
+  background-position: 0 -550px;
+  &:hover{
+    background-position: 0 -612px;
+  }
+}
+.top{
+  background-position: 0 -674px;
+  &:hover{
+    background-position: 0 -736px;
+  }
+}
+.layer{
+  position: absolute;
+  right: 47px;
+  bottom: 0;
+  width: 172px;
+  background: url("../img/toolbar.png") no-repeat;
+  opacity: 0;
+  transform: scale(0.01);
+  transform-origin: right top;
+  transition: .5s;
+}
+
