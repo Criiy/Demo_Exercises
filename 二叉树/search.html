@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>postOrderTraverse</title>
+</head>
+<body>
+
+<script>
+
+    function BinaryTree() {
+        var Node = function (key) {
+            this.key = key;
+            this.left = null;
+            this.right = null;
+        };
+
+        var root = null;
+
+        var insertNode = function (node, newNode) {
+            if(newNode.key < node.key){
+                if (node.left === null){
+                    node.left = newNode;
+                } else {
+                    insertNode(node.left,newNode);
+                }
+            } else {
+                if (node.right === null){
+                    node.right = newNode;
+                } else {
+                    insertNode(node.right,newNode);
+                }
+            }
+        };
+
+        this.insert =function (key) {
+            var newNode = new Node(key);
+            if(root === null) {
+                root = newNode;
+            } else {
+                insertNode(root,newNode);
+            }
+        };
+
+        //查找最小值
+        var minNode = function (node) {
+          if (node) {//如果当前节点存在
+              while (node && node.left !== null) {
+                  //一直进入左子树查找最小值
+                  node = node.left;
+              }
+              return node.key;
+              //如果return了，则说明当前节点没有左子树，就是最小值
+          }
+        };
+
+
+        //查找最大值
+        var maxNode = function (node) {
+            if (node) {//如果当前节点存在
+                while (node && node.right !== null) {
+                    //一直进入右子树查找最小值
+                    node = node.right;
+                }
+                return node.key;
+                //如果return了，则说明当前节点没有右子树，就是最大值
+            }
+        };
+
+        //查找最小值
+        this.min = function () {
+            return minNode(root);
+        };
+
+        //查找最大值
+        this.max = function () {
+            return maxNode(root);
+        }
+
+
+
+    }
+
+
+    //新建一颗二叉树
+    var nodes = [3,23,120,4,4324,234,432,54,236,56,7];
+    var binaryTree = new BinaryTree();
+    nodes.forEach(function (key) { binaryTree.insert(key) });
+
+    //定义泵出节点函数
+    var pumpOut = function (key) {
+        console.log(key);
+    };
+
+    //查找最大，小值调用
+    console.log("min " + binaryTree.min());
+    console.log("min " + binaryTree.max());
+
+</script>
+
+</body>
+</html>
