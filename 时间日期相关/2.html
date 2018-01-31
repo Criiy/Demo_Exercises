@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>react little demo</title>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script></head>
+<body>
+
+
+<div id="container"></div>
+
+<script type="text/babel">
+
+    var clickComponent = React.createClass({
+        render: function () {
+            return (
+                <div>
+                    <button>click</button>
+                </div>
+            );
+        }
+    });
+
+
+    var inputComponent = React.createClass({
+        getInitialState: function () {
+            return {
+                inputContent: ""
+            }
+        },
+        render: function () {
+            return (
+                    <div>
+                        <input type="text"/><span>{this.state.inputContent}</span>
+                    </div>
+            );
+        }
+    });
+
+
+    React.render(
+        <div>
+            <clickComponent/>
+            <inputComponent/>
+        </div>,
+        document.getElementById("container"));
+
+</script>
+</body>
+</html>
