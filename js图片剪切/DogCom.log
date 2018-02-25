@@ -1,0 +1,214 @@
+[2018-01-22 15:29:18,317] 1 -- INFO  -- loginfo [WriteLog] -- 加载DLL失败(126)
+[2018-01-22 15:29:18,338] 1 -- INFO  -- loginfo [WriteLog] -- 初始化程序成功
+[2018-01-22 15:29:35,647] 6 -- INFO  -- loginfo [WriteLog] -- 开始更新gdut-drcom.dll,当前心跳包版本(0.0.0)
+[2018-01-22 15:29:37,527] 6 -- INFO  -- loginfo [WriteLog] -- [gdut-drcom.dll]正在从Github检测更新
+[2018-01-22 15:29:37,531] 6 -- INFO  -- loginfo [WriteLog] -- 远端版本:1.6.8
+[2018-01-22 15:29:41,844] 6 -- INFO  -- loginfo [WriteLog] -- 下载成功(gdut-drcom.dll)
+[2018-01-22 15:29:41,847] 6 -- INFO  -- loginfo [WriteLog] -- 更新DLL成功
+[2018-01-22 15:39:19,615] 9 -- INFO  -- loginfo [WriteLog] -- [Drcom-Dialer.exe]正在从Github检测更新
+[2018-01-22 15:39:19,669] 9 -- INFO  -- loginfo [WriteLog] -- 远端版本:1.0.2.131
+[2018-01-22 15:39:19,670] 9 -- INFO  -- loginfo [WriteLog] -- 无需更新
+[2018-01-22 19:07:45,322] 1 -- INFO  -- loginfo [WriteLog] -- 初始化程序成功
+[2018-01-22 19:07:47,820] 6 -- INFO  -- loginfo [WriteLog] -- 开始更新gdut-drcom.dll,当前心跳包版本(1.6.8)
+[2018-01-22 19:07:48,035] 6 -- INFO  -- loginfo [WriteLog] -- [gdut-drcom.dll]正在从Github检测更新
+[2018-01-22 19:07:48,036] 6 -- INFO  -- loginfo [WriteLog] -- Github源获取失败
+[2018-01-22 19:07:48,596] 6 -- INFO  -- loginfo [WriteLog] -- [gdut-drcom.dll]正在从bigkeer检测更新
+[2018-01-22 19:07:48,600] 6 -- INFO  -- loginfo [WriteLog] -- 远端版本:1.6.8
+[2018-01-22 19:07:48,601] 6 -- INFO  -- loginfo [WriteLog] -- 无需更新
+[2018-01-22 19:07:48,601] 6 -- INFO  -- loginfo [WriteLog] -- 更新DLL成功
+[2018-01-22 19:17:48,997] 4 -- INFO  -- loginfo [WriteLog] -- [Drcom-Dialer.exe]正在从Github检测更新
+[2018-01-22 19:17:49,001] 4 -- INFO  -- loginfo [WriteLog] -- 远端版本:1.0.2.131
+[2018-01-22 19:17:49,002] 4 -- INFO  -- loginfo [WriteLog] -- 无需更新
+[2018-01-22 22:09:15,353] 1 -- INFO  -- loginfo [WriteLog] -- 初始化程序成功
+[2018-01-22 22:09:22,674] 6 -- ERROR -- logerror [WriteLog] -- 未将对象引用设置到对象的实例。
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Drcom_Dialer.Model.PPPoE.Dial(String username, String password, String connectName)
+[2018-01-22 22:09:22,678] 6 -- INFO  -- loginfo [WriteLog] -- OnPPPoEFail
+[2018-01-22 22:17:22,327] 4 -- INFO  -- loginfo [WriteLog] -- 开始更新gdut-drcom.dll,当前心跳包版本(1.6.8)
+[2018-01-22 22:17:24,103] 4 -- INFO  -- loginfo [WriteLog] -- [gdut-drcom.dll]正在从Github检测更新
+[2018-01-22 22:17:24,109] 4 -- INFO  -- loginfo [WriteLog] -- 远端版本:1.6.8
+[2018-01-22 22:17:24,109] 4 -- INFO  -- loginfo [WriteLog] -- 无需更新
+[2018-01-22 22:17:24,110] 4 -- INFO  -- loginfo [WriteLog] -- 更新DLL成功
+[2018-01-22 22:19:16,081] 10 -- INFO  -- loginfo [WriteLog] -- [Drcom-Dialer.exe]正在从Github检测更新
+[2018-01-22 22:19:16,083] 10 -- INFO  -- loginfo [WriteLog] -- 远端版本:1.0.2.131
+[2018-01-22 22:19:16,083] 10 -- INFO  -- loginfo [WriteLog] -- 无需更新
+[2018-01-23 09:00:09,436] 1 -- INFO  -- loginfo [WriteLog] -- 初始化程序成功
+[2018-01-23 09:00:14,574] 6 -- INFO  -- loginfo [WriteLog] -- 开始更新gdut-drcom.dll,当前心跳包版本(1.6.8)
+[2018-01-23 09:00:16,882] 6 -- INFO  -- loginfo [WriteLog] -- [gdut-drcom.dll]正在从Github检测更新
+[2018-01-23 09:00:16,927] 6 -- INFO  -- loginfo [WriteLog] -- 远端版本:1.6.8
+[2018-01-23 09:00:16,928] 6 -- INFO  -- loginfo [WriteLog] -- 无需更新
+[2018-01-23 09:00:16,928] 6 -- INFO  -- loginfo [WriteLog] -- 更新DLL成功
+[2018-01-23 09:10:11,218] 4 -- INFO  -- loginfo [WriteLog] -- [Drcom-Dialer.exe]正在从Github检测更新
+[2018-01-23 09:10:11,220] 4 -- INFO  -- loginfo [WriteLog] -- 远端版本:1.0.2.131
+[2018-01-23 09:10:11,220] 4 -- INFO  -- loginfo [WriteLog] -- 无需更新
+[2018-01-23 15:47:10,981] 1 -- ERROR -- logerror [WriteLog] -- 'entry' must have the PhoneNumber, DeviceType, DeviceName, FramingProtocol, and EntryType properties set as a minimum.
+参数名: entry
+System.ArgumentException: 'entry' must have the PhoneNumber, DeviceType, DeviceName, FramingProtocol, and EntryType properties set as a minimum.
+参数名: entry
+   在 DotRas.Internal.ThrowHelper.ThrowArgumentException(String argumentName, String resource)
+   在 DotRas.Internal.RasHelper.SetEntryProperties(RasPhoneBook phoneBook, RasEntry value)
+   在 DotRas.RasEntry.Update()
+   在 Drcom_Dialer.Model.PPPoE.Init(String connectName)
+[2018-01-23 15:47:11,199] 1 -- INFO  -- loginfo [WriteLog] -- 初始化程序成功
+[2018-01-23 15:47:39,247] 6 -- INFO  -- loginfo [WriteLog] -- 开始更新gdut-drcom.dll,当前心跳包版本(1.6.8)
+[2018-01-23 15:47:41,958] 6 -- INFO  -- loginfo [WriteLog] -- [gdut-drcom.dll]正在从Github检测更新
+[2018-01-23 15:47:42,137] 6 -- INFO  -- loginfo [WriteLog] -- 远端版本:1.6.8
+[2018-01-23 15:47:42,139] 6 -- INFO  -- loginfo [WriteLog] -- 无需更新
+[2018-01-23 15:47:42,140] 6 -- INFO  -- loginfo [WriteLog] -- 更新DLL成功
+[2018-01-23 15:57:13,470] 8 -- INFO  -- loginfo [WriteLog] -- [Drcom-Dialer.exe]正在从Github检测更新
+[2018-01-23 15:57:13,474] 8 -- INFO  -- loginfo [WriteLog] -- 远端版本:1.0.2.131
+[2018-01-23 15:57:13,475] 8 -- INFO  -- loginfo [WriteLog] -- 无需更新
+[2018-02-23 15:50:06,363] 1 -- ERROR -- logerror [WriteLog] -- 'entry' must have the PhoneNumber, DeviceType, DeviceName, FramingProtocol, and EntryType properties set as a minimum.
+参数名: entry
+System.ArgumentException: 'entry' must have the PhoneNumber, DeviceType, DeviceName, FramingProtocol, and EntryType properties set as a minimum.
+参数名: entry
+   在 DotRas.Internal.ThrowHelper.ThrowArgumentException(String argumentName, String resource)
+   在 DotRas.Internal.RasHelper.SetEntryProperties(RasPhoneBook phoneBook, RasEntry value)
+   在 DotRas.RasEntry.Update()
+   在 Drcom_Dialer.Model.PPPoE.Init(String connectName)
+[2018-02-23 15:50:06,446] 1 -- INFO  -- loginfo [WriteLog] -- 初始化程序成功
+[2018-02-23 15:50:21,145] 6 -- INFO  -- loginfo [WriteLog] -- 开始更新gdut-drcom.dll,当前心跳包版本(1.6.8)
+[2018-02-23 15:50:23,574] 6 -- INFO  -- loginfo [WriteLog] -- [gdut-drcom.dll]正在从Github检测更新
+[2018-02-23 15:50:23,575] 6 -- INFO  -- loginfo [WriteLog] -- Github源获取失败
+[2018-02-23 15:50:24,117] 6 -- INFO  -- loginfo [WriteLog] -- [gdut-drcom.dll]正在从bigkeer检测更新
+[2018-02-23 15:50:24,141] 6 -- INFO  -- loginfo [WriteLog] -- 远端版本:1.6.8
+[2018-02-23 15:50:24,143] 6 -- INFO  -- loginfo [WriteLog] -- 无需更新
+[2018-02-23 15:50:24,143] 6 -- INFO  -- loginfo [WriteLog] -- 更新DLL成功
+[2018-02-23 15:58:43,709] 1 -- INFO  -- loginfo [WriteLog] -- 初始化程序成功
+[2018-02-23 15:58:56,176] 5 -- INFO  -- loginfo [WriteLog] -- 开始更新gdut-drcom.dll,当前心跳包版本(1.6.8)
+[2018-02-23 15:58:56,868] 5 -- INFO  -- loginfo [WriteLog] -- [gdut-drcom.dll]正在从Github检测更新
+[2018-02-23 15:58:56,868] 5 -- INFO  -- loginfo [WriteLog] -- Github源获取失败
+[2018-02-23 15:58:57,297] 5 -- INFO  -- loginfo [WriteLog] -- [gdut-drcom.dll]正在从bigkeer检测更新
+[2018-02-23 15:58:57,301] 5 -- INFO  -- loginfo [WriteLog] -- 远端版本:1.6.8
+[2018-02-23 15:58:57,302] 5 -- INFO  -- loginfo [WriteLog] -- 无需更新
+[2018-02-23 15:58:57,302] 5 -- INFO  -- loginfo [WriteLog] -- 更新DLL成功
+[2018-02-23 16:08:46,340] 4 -- INFO  -- loginfo [WriteLog] -- [Drcom-Dialer.exe]正在从Github检测更新
+[2018-02-23 16:08:46,362] 4 -- INFO  -- loginfo [WriteLog] -- Github源获取失败
+[2018-02-23 16:08:46,767] 4 -- INFO  -- loginfo [WriteLog] -- [Drcom-Dialer.exe]正在从bigkeer检测更新
+[2018-02-23 16:08:46,767] 4 -- INFO  -- loginfo [WriteLog] -- 远端版本:1.0.2.131
+[2018-02-23 16:08:46,768] 4 -- INFO  -- loginfo [WriteLog] -- 无需更新
+[2018-02-24 00:41:35,690] 1 -- ERROR -- logerror [WriteLog] -- 'entry' must have the PhoneNumber, DeviceType, DeviceName, FramingProtocol, and EntryType properties set as a minimum.
+参数名: entry
+System.ArgumentException: 'entry' must have the PhoneNumber, DeviceType, DeviceName, FramingProtocol, and EntryType properties set as a minimum.
+参数名: entry
+   在 DotRas.Internal.ThrowHelper.ThrowArgumentException(String argumentName, String resource)
+   在 DotRas.Internal.RasHelper.SetEntryProperties(RasPhoneBook phoneBook, RasEntry value)
+   在 DotRas.RasEntry.Update()
+   在 Drcom_Dialer.Model.PPPoE.Init(String connectName)
+[2018-02-24 00:41:35,782] 1 -- INFO  -- loginfo [WriteLog] -- 初始化程序成功
+[2018-02-24 00:41:54,898] 6 -- INFO  -- loginfo [WriteLog] -- 开始更新gdut-drcom.dll,当前心跳包版本(1.6.8)
+[2018-02-24 00:42:00,947] 6 -- INFO  -- loginfo [WriteLog] -- [gdut-drcom.dll]正在从Github检测更新
+[2018-02-24 00:42:00,947] 6 -- INFO  -- loginfo [WriteLog] -- Github源获取失败
+[2018-02-24 00:42:01,533] 6 -- INFO  -- loginfo [WriteLog] -- [gdut-drcom.dll]正在从bigkeer检测更新
+[2018-02-24 00:42:01,579] 6 -- INFO  -- loginfo [WriteLog] -- 远端版本:1.6.8
+[2018-02-24 00:42:01,581] 6 -- INFO  -- loginfo [WriteLog] -- 无需更新
+[2018-02-24 00:42:01,581] 6 -- INFO  -- loginfo [WriteLog] -- 更新DLL成功
+[2018-02-24 21:43:45,141] 1 -- ERROR -- logerror [WriteLog] -- 'entry' must have the PhoneNumber, DeviceType, DeviceName, FramingProtocol, and EntryType properties set as a minimum.
+参数名: entry
+System.ArgumentException: 'entry' must have the PhoneNumber, DeviceType, DeviceName, FramingProtocol, and EntryType properties set as a minimum.
+参数名: entry
+   在 DotRas.Internal.ThrowHelper.ThrowArgumentException(String argumentName, String resource)
+   在 DotRas.Internal.RasHelper.SetEntryProperties(RasPhoneBook phoneBook, RasEntry value)
+   在 DotRas.RasEntry.Update()
+   在 Drcom_Dialer.Model.PPPoE.Init(String connectName)
+[2018-02-24 21:43:45,453] 1 -- INFO  -- loginfo [WriteLog] -- 初始化程序成功
+[2018-02-24 21:44:03,956] 6 -- INFO  -- loginfo [WriteLog] -- 开始更新gdut-drcom.dll,当前心跳包版本(1.6.8)
+[2018-02-24 21:44:06,056] 6 -- INFO  -- loginfo [WriteLog] -- [gdut-drcom.dll]正在从Github检测更新
+[2018-02-24 21:44:06,057] 6 -- INFO  -- loginfo [WriteLog] -- Github源获取失败
+[2018-02-24 21:44:06,641] 6 -- INFO  -- loginfo [WriteLog] -- [gdut-drcom.dll]正在从bigkeer检测更新
+[2018-02-24 21:44:06,658] 6 -- INFO  -- loginfo [WriteLog] -- 远端版本:1.6.8
+[2018-02-24 21:44:06,658] 6 -- INFO  -- loginfo [WriteLog] -- 无需更新
+[2018-02-24 21:44:06,659] 6 -- INFO  -- loginfo [WriteLog] -- 更新DLL成功
+[2018-02-24 21:47:20,313] 1 -- INFO  -- loginfo [WriteLog] -- 初始化程序成功
+[2018-02-24 21:47:27,990] 6 -- INFO  -- loginfo [WriteLog] -- 开始更新gdut-drcom.dll,当前心跳包版本(1.6.8)
+[2018-02-24 21:47:28,909] 6 -- INFO  -- loginfo [WriteLog] -- [gdut-drcom.dll]正在从Github检测更新
+[2018-02-24 21:47:28,909] 6 -- INFO  -- loginfo [WriteLog] -- Github源获取失败
+[2018-02-24 21:47:29,526] 6 -- INFO  -- loginfo [WriteLog] -- [gdut-drcom.dll]正在从bigkeer检测更新
+[2018-02-24 21:47:29,528] 6 -- INFO  -- loginfo [WriteLog] -- 远端版本:1.6.8
+[2018-02-24 21:47:29,529] 6 -- INFO  -- loginfo [WriteLog] -- 无需更新
+[2018-02-24 21:47:29,529] 6 -- INFO  -- loginfo [WriteLog] -- 更新DLL成功
+[2018-02-24 21:56:26,902] 1 -- ERROR -- logerror [WriteLog] -- 系统无法更新电话簿文件。
+DotRas.RasException: 系统无法更新电话簿文件。
+   在 DotRas.Internal.ThrowHelper.ThrowRasException(Int32 errorCode)
+   在 DotRas.Internal.RasHelper.SetEntryProperties(RasPhoneBook phoneBook, RasEntry value)
+   在 DotRas.RasEntry.Update()
+   在 Drcom_Dialer.Model.PPPoE.Init(String connectName)
+[2018-02-24 21:56:26,927] 1 -- INFO  -- loginfo [WriteLog] -- 初始化程序成功
+[2018-02-24 21:56:33,551] 6 -- INFO  -- loginfo [WriteLog] -- 开始更新gdut-drcom.dll,当前心跳包版本(1.6.8)
+[2018-02-24 21:56:34,470] 6 -- INFO  -- loginfo [WriteLog] -- [gdut-drcom.dll]正在从Github检测更新
+[2018-02-24 21:56:34,470] 6 -- INFO  -- loginfo [WriteLog] -- Github源获取失败
+[2018-02-24 21:56:34,787] 6 -- INFO  -- loginfo [WriteLog] -- [gdut-drcom.dll]正在从bigkeer检测更新
+[2018-02-24 21:56:34,791] 6 -- INFO  -- loginfo [WriteLog] -- 远端版本:1.6.8
+[2018-02-24 21:56:34,792] 6 -- INFO  -- loginfo [WriteLog] -- 无需更新
+[2018-02-24 21:56:34,792] 6 -- INFO  -- loginfo [WriteLog] -- 更新DLL成功
+[2018-02-24 21:58:11,961] 1 -- INFO  -- loginfo [WriteLog] -- 初始化程序成功
+[2018-02-24 21:58:13,987] 5 -- INFO  -- loginfo [WriteLog] -- 开始更新gdut-drcom.dll,当前心跳包版本(1.6.8)
+[2018-02-24 21:58:14,710] 5 -- INFO  -- loginfo [WriteLog] -- [gdut-drcom.dll]正在从Github检测更新
+[2018-02-24 21:58:14,710] 5 -- INFO  -- loginfo [WriteLog] -- Github源获取失败
+[2018-02-24 21:58:15,141] 5 -- INFO  -- loginfo [WriteLog] -- [gdut-drcom.dll]正在从bigkeer检测更新
+[2018-02-24 21:58:15,144] 5 -- INFO  -- loginfo [WriteLog] -- 远端版本:1.6.8
+[2018-02-24 21:58:15,145] 5 -- INFO  -- loginfo [WriteLog] -- 无需更新
+[2018-02-24 21:58:15,145] 5 -- INFO  -- loginfo [WriteLog] -- 更新DLL成功
+[2018-02-24 22:04:38,363] 1 -- INFO  -- loginfo [WriteLog] -- 初始化程序成功
+[2018-02-24 22:04:46,596] 6 -- INFO  -- loginfo [WriteLog] -- 开始更新gdut-drcom.dll,当前心跳包版本(1.6.8)
+[2018-02-24 22:04:47,357] 6 -- INFO  -- loginfo [WriteLog] -- [gdut-drcom.dll]正在从Github检测更新
+[2018-02-24 22:04:47,358] 6 -- INFO  -- loginfo [WriteLog] -- Github源获取失败
+[2018-02-24 22:04:47,756] 6 -- INFO  -- loginfo [WriteLog] -- [gdut-drcom.dll]正在从bigkeer检测更新
+[2018-02-24 22:04:47,760] 6 -- INFO  -- loginfo [WriteLog] -- 远端版本:1.6.8
+[2018-02-24 22:04:47,760] 6 -- INFO  -- loginfo [WriteLog] -- 无需更新
+[2018-02-24 22:04:47,760] 6 -- INFO  -- loginfo [WriteLog] -- 更新DLL成功
+[2018-02-24 22:09:24,307] 1 -- INFO  -- loginfo [WriteLog] -- 初始化程序成功
+[2018-02-24 22:09:30,557] 6 -- INFO  -- loginfo [WriteLog] -- 开始更新gdut-drcom.dll,当前心跳包版本(1.6.8)
+[2018-02-24 22:09:31,620] 6 -- INFO  -- loginfo [WriteLog] -- [gdut-drcom.dll]正在从Github检测更新
+[2018-02-24 22:09:31,621] 6 -- INFO  -- loginfo [WriteLog] -- Github源获取失败
+[2018-02-24 22:09:32,518] 6 -- INFO  -- loginfo [WriteLog] -- [gdut-drcom.dll]正在从bigkeer检测更新
+[2018-02-24 22:09:32,523] 6 -- INFO  -- loginfo [WriteLog] -- 远端版本:1.6.8
+[2018-02-24 22:09:32,525] 6 -- INFO  -- loginfo [WriteLog] -- 无需更新
+[2018-02-24 22:09:32,526] 6 -- INFO  -- loginfo [WriteLog] -- 更新DLL成功
+[2018-02-24 22:19:24,698] 7 -- INFO  -- loginfo [WriteLog] -- [Drcom-Dialer.exe]正在从Github检测更新
+[2018-02-24 22:19:24,724] 7 -- INFO  -- loginfo [WriteLog] -- Github源获取失败
+[2018-02-24 22:19:25,120] 7 -- INFO  -- loginfo [WriteLog] -- [Drcom-Dialer.exe]正在从bigkeer检测更新
+[2018-02-24 22:19:25,121] 7 -- INFO  -- loginfo [WriteLog] -- 远端版本:1.0.2.131
+[2018-02-24 22:19:25,121] 7 -- INFO  -- loginfo [WriteLog] -- 无需更新
+[2018-02-24 22:47:05,616] 1 -- ERROR -- logerror [WriteLog] -- 'entry' must have the PhoneNumber, DeviceType, DeviceName, FramingProtocol, and EntryType properties set as a minimum.
+参数名: entry
+System.ArgumentException: 'entry' must have the PhoneNumber, DeviceType, DeviceName, FramingProtocol, and EntryType properties set as a minimum.
+参数名: entry
+   在 DotRas.Internal.ThrowHelper.ThrowArgumentException(String argumentName, String resource)
+   在 DotRas.Internal.RasHelper.SetEntryProperties(RasPhoneBook phoneBook, RasEntry value)
+   在 DotRas.RasEntry.Update()
+   在 Drcom_Dialer.Model.PPPoE.Init(String connectName)
+[2018-02-24 22:47:05,717] 1 -- INFO  -- loginfo [WriteLog] -- 初始化程序成功
+[2018-02-24 22:47:12,542] 6 -- INFO  -- loginfo [WriteLog] -- 开始更新gdut-drcom.dll,当前心跳包版本(1.6.8)
+[2018-02-24 22:47:14,418] 6 -- INFO  -- loginfo [WriteLog] -- [gdut-drcom.dll]正在从Github检测更新
+[2018-02-24 22:47:14,419] 6 -- INFO  -- loginfo [WriteLog] -- Github源获取失败
+[2018-02-24 22:47:14,927] 6 -- INFO  -- loginfo [WriteLog] -- [gdut-drcom.dll]正在从bigkeer检测更新
+[2018-02-24 22:47:14,944] 6 -- INFO  -- loginfo [WriteLog] -- 远端版本:1.6.8
+[2018-02-24 22:47:14,944] 6 -- INFO  -- loginfo [WriteLog] -- 无需更新
+[2018-02-24 22:47:14,944] 6 -- INFO  -- loginfo [WriteLog] -- 更新DLL成功
+[2018-02-24 22:57:09,447] 4 -- INFO  -- loginfo [WriteLog] -- [Drcom-Dialer.exe]正在从Github检测更新
+[2018-02-24 22:57:09,447] 4 -- INFO  -- loginfo [WriteLog] -- Github源获取失败
+[2018-02-24 22:57:09,856] 4 -- INFO  -- loginfo [WriteLog] -- [Drcom-Dialer.exe]正在从bigkeer检测更新
+[2018-02-24 22:57:09,856] 4 -- INFO  -- loginfo [WriteLog] -- 远端版本:1.0.2.131
+[2018-02-24 22:57:09,857] 4 -- INFO  -- loginfo [WriteLog] -- 无需更新
+[2018-02-25 15:09:11,734] 1 -- ERROR -- logerror [WriteLog] -- 'entry' must have the PhoneNumber, DeviceType, DeviceName, FramingProtocol, and EntryType properties set as a minimum.
+参数名: entry
+System.ArgumentException: 'entry' must have the PhoneNumber, DeviceType, DeviceName, FramingProtocol, and EntryType properties set as a minimum.
+参数名: entry
+   在 DotRas.Internal.ThrowHelper.ThrowArgumentException(String argumentName, String resource)
+   在 DotRas.Internal.RasHelper.SetEntryProperties(RasPhoneBook phoneBook, RasEntry value)
+   在 DotRas.RasEntry.Update()
+   在 Drcom_Dialer.Model.PPPoE.Init(String connectName)
+[2018-02-25 15:09:11,763] 1 -- INFO  -- loginfo [WriteLog] -- 初始化程序成功
+[2018-02-25 15:09:18,507] 6 -- INFO  -- loginfo [WriteLog] -- 开始更新gdut-drcom.dll,当前心跳包版本(1.6.8)
+[2018-02-25 15:09:20,271] 6 -- INFO  -- loginfo [WriteLog] -- [gdut-drcom.dll]正在从Github检测更新
+[2018-02-25 15:09:20,272] 6 -- INFO  -- loginfo [WriteLog] -- Github源获取失败
+[2018-02-25 15:09:20,824] 6 -- INFO  -- loginfo [WriteLog] -- [gdut-drcom.dll]正在从bigkeer检测更新
+[2018-02-25 15:09:20,841] 6 -- INFO  -- loginfo [WriteLog] -- 远端版本:1.6.8
+[2018-02-25 15:09:20,841] 6 -- INFO  -- loginfo [WriteLog] -- 无需更新
+[2018-02-25 15:09:20,842] 6 -- INFO  -- loginfo [WriteLog] -- 更新DLL成功
+[2018-02-25 15:19:12,415] 7 -- INFO  -- loginfo [WriteLog] -- [Drcom-Dialer.exe]正在从Github检测更新
+[2018-02-25 15:19:12,416] 7 -- INFO  -- loginfo [WriteLog] -- Github源获取失败
+[2018-02-25 15:19:12,828] 7 -- INFO  -- loginfo [WriteLog] -- [Drcom-Dialer.exe]正在从bigkeer检测更新
+[2018-02-25 15:19:12,829] 7 -- INFO  -- loginfo [WriteLog] -- 远端版本:1.0.2.131
+[2018-02-25 15:19:12,829] 7 -- INFO  -- loginfo [WriteLog] -- 无需更新
