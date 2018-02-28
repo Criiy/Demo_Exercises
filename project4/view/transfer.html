@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>通讯状态</title>
+<link rel="stylesheet" href="./view/style.css">
+</head>
+<body>
+<div class="box">
+	<h1 class="title">通讯状态</h1>
+	<ul>
+		<li><?php echo $message; ?></li>
+		<?php if(isset($success)): ?>
+			<li><a href="?a=index">返回</a></li>
+		<?php else: ?>
+			<script>
+				(function(){
+					setTimeout(function(){
+						location.href = '<?php echo $target; ?>';
+					},1000);
+				})();
+			</script>
+			<li><a href="<?php echo $target; ?>">如果您的浏览器没有自动跳转，请点我</a></li>
+		<?php endif; ?>
+	</ul>
+</div>
+</body>
+</html>

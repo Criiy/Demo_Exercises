@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>程序发生错误</title>
+<link rel="stylesheet" href="./view/style.css">
+</head>
+<body>
+<div class="box">
+	<h1 class="title error">程序发生错误</h1>
+	<ul>
+		<li><?php echo $message; ?></li>
+		<?php if(isset($goback)): ?>
+			<li><a href="#" onclick="history.back();">返回上一页</a></li>
+		<?php else: ?>
+			<li><a href="?action=index">返回首页</a></li>
+		<?php endif; ?>
+	</ul>
+</div>
+</body>
+</html>

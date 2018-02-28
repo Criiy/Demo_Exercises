@@ -1,0 +1,7 @@
+body{margin:0;padding:0;background:#eee;font-family:'Microsoft YaHei';color:#333;}
+.box{border:1px solid #673E15;margin:10px auto;width:50%;min-width:230px;background:#FFF1C0;padding:0 40px;}
+.title{border-bottom:2px double #ddd;text-align:center;margin:15px 50px;padding-bottom:3px;letter-spacing:3px;font-size:18px;}
+ul{line-height:30px; color:#222;}
+a{color:#3366ff;text-decoration:none;}
+a:hover{text-decoration:underline;}
+.error{color:#f00;}

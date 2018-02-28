@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>添加员工信息</title>
+<link rel="stylesheet" href="./view/style.css">
+</head>
+<body>
+<div class="box">
+	<h1 class="title">添加员工信息</h1>
+	<form method="post" action="?module=Employee&action=add" id="addForm">
+		<ul>
+			<li>输入姓名：<input type="text" name="name" /></li>
+			<li>输入年龄：<input type="text" name="age" /></li>
+			<li><a href="#" id="submit">提交</a>　<a href="?action=index">返回</a></li>
+		</ul>
+	</form>
+</div>
+<script>
+	//单击链接提交表单
+	(function(){
+		var addForm = document.getElementById("addForm");
+		var submit = document.getElementById("submit");
+		submit.onclick = function(){
+			addForm.submit();
+		};
+	})();
+</script>
+</body>
+</html>
