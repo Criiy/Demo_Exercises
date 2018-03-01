@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo</title>
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.js"></script>
+
+</head>
+<body>
+
+<input type="text" class="form-control selectData" id="date" name="date" >
+
+<input type="text" class="form-control" value="02-16-2012">
+
+<script>
+   /*
+*/
+  $(function () {
+      $.fn.datepicker.dates['cn'] = {   //切换为中文显示
+          days: ["周日", "周一", "周二", "周三", "周四", "周五", "周六", "周日"],
+          daysShort: ["日", "一", "二", "三", "四", "五", "六", "七"],
+          daysMin: ["日", "一", "二", "三", "四", "五", "六", "七"],
+          months: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一", "十二"],
+          monthsShort: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一", "十二"],
+          today: "今天",
+          clear: "清除"
+      };
+
+      $('.selectData').datepicker({
+          autoclose: true, //自动关闭
+          beforeShowDay: $.noop,    //在显示日期之前调用的函数
+          calendarWeeks: false,     //是否显示今年是第几周
+          clearBtn: false,          //显示清除按钮
+          daysOfWeekDisabled: [],   //星期几不可选
+          endDate: Infinity,        //日历结束日期
+          forceParse: true,         //是否强制转换不符合格式的字符串
+          format: 'yyyy-mm-dd',     //日期格式
+          keyboardNavigation: true, //是否显示箭头导航
+          language: 'cn',           //语言
+          minViewMode: 0,
+          orientation: "auto",      //方向
+          rtl: false,
+          startDate: -Infinity,     //日历开始日期
+          startView: 0,             //开始显示
+          todayBtn: true,          //今天按钮
+          todayHighlight: true,    //今天高亮
+          weekStart: 0              //星期几是开始
+      });
+  });
+
+</script>
+
+
+
+</body>
+
+
+<style>
+    table {
+        display: table;
+
+        border: 1px solid grey;
+        box-shadow: 1px 1px 10px;
+    }
+
+    th{
+        font-weight: 600;
+    }
+
+    .datepicker table tr td.active:hover, .datepicker table tr td.active:hover:hover, .datepicker table tr td.active.disabled:hover, .datepicker table tr td.active.disabled:hover:hover, .datepicker table tr td.active:active, .datepicker table tr td.active:hover:active, .datepicker table tr td.active.disabled:active, .datepicker table tr td.active.disabled:hover:active, .datepicker table tr td.active.active, .datepicker table tr td.active:hover.active, .datepicker table tr td.active.disabled.active, .datepicker table tr td.active.disabled:hover.active, .datepicker table tr td.active.disabled, .datepicker table tr td.active:hover.disabled, .datepicker table tr td.active.disabled.disabled, .datepicker table tr td.active.disabled:hover.disabled, .datepicker table tr td.active[disabled], .datepicker table tr td.active:hover[disabled], .datepicker table tr td.active.disabled[disabled], .datepicker table tr td.active.disabled:hover[disabled]{
+        background: springgreen;
+    }
+    .datepicker table tr td span.active:hover, .datepicker table tr td span.active:hover:hover, .datepicker table tr td span.active.disabled:hover, .datepicker table tr td span.active.disabled:hover:hover, .datepicker table tr td span.active:active, .datepicker table tr td span.active:hover:active, .datepicker table tr td span.active.disabled:active, .datepicker table tr td span.active.disabled:hover:active, .datepicker table tr td span.active.active, .datepicker table tr td span.active:hover.active, .datepicker table tr td span.active.disabled.active, .datepicker table tr td span.active.disabled:hover.active, .datepicker table tr td span.active.disabled, .datepicker table tr td span.active:hover.disabled, .datepicker table tr td span.active.disabled.disabled, .datepicker table tr td span.active.disabled:hover.disabled, .datepicker table tr td span.active[disabled], .datepicker table tr td span.active:hover[disabled], .datepicker table tr td span.active.disabled[disabled], .datepicker table tr td span.active.disabled:hover[disabled]{
+        background: springgreen;
+    }
+</style>
+</html>
